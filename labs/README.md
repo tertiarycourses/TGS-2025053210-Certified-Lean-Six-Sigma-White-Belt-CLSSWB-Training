@@ -1,22 +1,28 @@
-# Labs Index
+# Labs — Certified Lean Six Sigma White Belt (CLSSWB) Training
 
-Complete the labs in order. Each lab builds a simple White Belt improvement portfolio.
+**WSQ Course Code:** TGS-2025053210  |  **Version v2 · 19 July 2026**
 
-| Lab | Title |
-| --- | --- |
-| [Lab 01](lab-01-lean-six-sigma-foundations.md) | Lean Six Sigma Foundations |
-| [Lab 02](lab-02-customer-value-and-process-thinking.md) | Customer Value and Process Thinking |
-| [Lab 03](lab-03-process-walk-and-simple-map.md) | Process Walk and Simple Map |
-| [Lab 04](lab-04-identify-timwoods-waste.md) | Identify TIMWOODS Waste |
-| [Lab 05](lab-05-basic-data-and-visuals.md) | Basic Data and Visuals |
-| [Lab 06](lab-06-problem-solving-5-whys-fishbone.md) | Problem Solving with 5 Whys and Fishbone |
-| [Lab 07](lab-07-5s-standard-work-visual-controls.md) | 5S, Standard Work, and Visual Controls |
-| [Lab 08](lab-08-improvement-summary-and-action-plan.md) | Improvement Summary and Action Plan |
+These labs follow the DMAIC roadmap end to end. Every lab builds on the same BrewBean Cafe morning rush scenario, so your outputs accumulate into one complete improvement package.
 
-## Lab Rules
+## Lab types
 
-1. Use a simple process you understand.
-2. Observe the work respectfully and without blame.
-3. Keep facts, opinions, and assumptions separate.
-4. Use simple data where possible.
-5. Escalate larger problems to a process owner, Green Belt, Black Belt, or manager.
+- **Core** — completed by everyone; maps directly to the assessment.
+- **Elective** — additional practice with further Lean Six Sigma tools; run when time allows or after the course.
+
+## Lab index
+
+| # | Lab | DMAIC phase | Type |
+|---|-----|-------------|------|
+| 1 | [Define — Customer Requirements and the Problem Statement](lab-01-define-customer-requirements-and-the-problem-statement.md) | DEFINE | Core |
+| 2 | [Measure — Map the Process and Spot the Waste](lab-02-measure-map-the-process-and-spot-the-waste.md) | MEASURE | Core |
+| 3 | [Analyze — Find the Root Cause](lab-03-analyze-find-the-root-cause.md) | ANALYZE | Core |
+| 4 | [Improve — Choose and Pilot a Countermeasure](lab-04-improve-choose-and-pilot-a-countermeasure.md) | IMPROVE | Core |
+| 5 | [Control — Hold the Gain and Hand Over](lab-05-control-hold-the-gain-and-hand-over.md) | CONTROL | Core |
+
+## The interactive toolkit
+
+See [tools.md](tools.md) for the browser-based problem-solving tools used in the labs.
+
+---
+
+*© 2026 Tertiary Infotech Academy Pte Ltd*

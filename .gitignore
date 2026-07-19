@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------- CONFIDENTIAL
+# The assessment set (question papers AND answer keys) is confidential and must
+# NEVER be pushed to GitHub. It goes to Google Drive only; on the LMS only the
+# two question papers are attached — the answer keys are trainer-only.
+assessment/
+
+# Superseded artifact versions are kept locally for reference, not published.
+courseware/archive/
+
+# ---------------------------------------------------------------- build junk
+__pycache__/
+*.pyc
+.DS_Store
+~$*
+*.tmp
+.playwright-mcp/
+
+# Source/reference material (large original trainer decks) — not published.
+reference/

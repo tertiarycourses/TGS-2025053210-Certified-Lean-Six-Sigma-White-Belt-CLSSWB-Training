@@ -1,68 +1,100 @@
 # TGS-2025053210 - Certified Lean Six Sigma White Belt (CLSSWB) Training
 
-> Course: Certified Lean Six Sigma White Belt (CLSSWB) Training  
-> Course Code: TGS-2025053210  
-> Register here: https://www.tertiarycourses.com.sg/wsq-certified-lean-six-sigma-white-belt-clsswb-training.html
+> **Course:** WSQ - Certified Lean Six Sigma White Belt (CLSSWB) Training  
+> **Course Code:** TGS-2025053210  
+> **Register here:** https://www.tertiarycourses.com.sg/wsq-certified-lean-six-sigma-white-belt-clsswb-training.html
 
-Hands-on Certified Lean Six Sigma White Belt labs for learners building foundational process improvement awareness. The labs cover Lean and Six Sigma basics, DMAIC, customer value, the White Belt support role, TIMWOODS waste, basic process mapping, simple data collection, visual problem solving, 5S, standard work, and continuous improvement habits.
+These are the hands-on lab exercises for the WSQ Certified Lean Six Sigma White Belt (CLSSWB) Training course delivered by [Tertiary Infotech Academy Pte Ltd](https://www.tertiarycourses.com.sg/).
+
+This repository contains **5 guided Lean Six Sigma White Belt labs** (5 core and 0 elective), structured around the **DMAIC roadmap** and grounded in the Council for Six Sigma Certification (CSSC) White Belt body of knowledge.
+
+---
 
 ## Courseware
 
-| File | Description |
-| --- | --- |
-| [Learner Guide](LG-Certified-Lean-Six-Sigma-White-Belt-CLSSWB-Training.md) | Detailed step-by-step guide for the full course. |
-| [Labs Index](labs/README.md) | Quick access to all hands-on labs. |
-| [Tools and Templates Reference](labs/tools-and-templates.md) | Free tools, worksheets, and templates used in the labs. |
+| Artifact | File |
+|----------|------|
+| **Slide deck** | `courseware/Certified Lean Six Sigma White Belt (CLSSWB) Training-v2.pptx` (and `.pdf`) |
+| **Learner Guide (Markdown)** | [LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.md](LG-Certified%20Lean%20Six%20Sigma%20White%20Belt%20%28CLSSWB%29%20Training.md) |
+| **Learner Guide (DOCX/PDF)** | `courseware/LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
+| **Lesson Plan (DOCX/PDF)** | `courseware/LP-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
+| **Lab Index** | [labs/README.md](labs/README.md) |
+| **Tools and Templates** | [labs/tools.md](labs/tools.md) |
 
-## How to Use
+> **Note:** assessment papers, answer keys and trainer-only materials are intentionally not published in this repository.
 
-1. Open the learner guide first and review the White Belt role.
-2. Complete the labs in order because each lab builds a small improvement awareness portfolio.
-3. Use a simple workplace process that you know well.
-4. Keep every worksheet, sketch, and reflection for the final improvement summary.
-5. Use paper, whiteboard, spreadsheet software, or diagrams.net as preferred by your trainer.
+---
 
-## Lab Catalogue
+## How to use
 
-### Foundations
+1. Read the Learner Guide first — it follows the same DMAIC order as the course.
+2. Complete the five labs in order using the BrewBean Cafe scenario.
+3. Complete the elective labs if time allows, or as post-course practice.
+4. Keep every worksheet — the final lab combines them into one improvement package.
+5. Review the 'Check your work' step at the end of each lab before moving on.
 
-| Lab | Title | Skills Practised |
-| --- | --- | --- |
-| [Lab 01](labs/lab-01-lean-six-sigma-foundations.md) | Lean Six Sigma Foundations | Lean, Six Sigma, DMAIC, customer focus, White Belt role |
-| [Lab 02](labs/lab-02-customer-value-and-process-thinking.md) | Customer Value and Process Thinking | Customer needs, value-added work, process boundaries, simple SIPOC |
+---
 
-### See the Work
+## Lab catalogue
 
-| Lab | Title | Skills Practised |
-| --- | --- | --- |
-| [Lab 03](labs/lab-03-process-walk-and-simple-map.md) | Process Walk and Simple Map | Gemba, observation, process steps, handoffs, waiting |
-| [Lab 04](labs/lab-04-identify-timwoods-waste.md) | Identify TIMWOODS Waste | Transport, inventory, motion, waiting, overproduction, overprocessing, defects, skills |
+### Define — Understand the Problem
 
-### Support Improvement
+- [Lab 1 - Define — Customer Requirements and the Problem Statement](labs/lab-01-define-customer-requirements-and-the-problem-statement.md)
 
-| Lab | Title | Skills Practised |
-| --- | --- | --- |
-| [Lab 05](labs/lab-05-basic-data-and-visuals.md) | Basic Data and Visuals | Check sheets, tally counts, run chart, Pareto thinking |
-| [Lab 06](labs/lab-06-problem-solving-5-whys-fishbone.md) | Problem Solving with 5 Whys and Fishbone | Problem statement, 5 Whys, cause categories, evidence |
+### Measure — See What Is Really Happening
 
-### Sustain Improvement
+- [Lab 2 - Measure — Map the Process and Spot the Waste](labs/lab-02-measure-map-the-process-and-spot-the-waste.md)
 
-| Lab | Title | Skills Practised |
-| --- | --- | --- |
-| [Lab 07](labs/lab-07-5s-standard-work-visual-controls.md) | 5S, Standard Work, and Visual Controls | Sort, set in order, shine, standardize, sustain, visual management |
-| [Lab 08](labs/lab-08-improvement-summary-and-action-plan.md) | Improvement Summary and Action Plan | Improvement idea, support plan, control habit, final presentation |
+### Analyze — Find the Cause
 
-## References
+- [Lab 3 - Analyze — Find the Root Cause](labs/lab-03-analyze-find-the-root-cause.md)
 
-- Lean Six Sigma White Belt Guide: https://www.learnleansigma.com/guides/guide-white-belt/
-- Course registration: https://www.tertiarycourses.com.sg/wsq-certified-lean-six-sigma-white-belt-clsswb-training.html
-- ASQ Lean Six Sigma resources: https://asq.org/quality-resources/six-sigma
-- Learn Lean Sigma templates and tools: https://www.learnleansigma.com/
+### Improve — Fix the Cause
 
-## Free Tools Used
+- [Lab 4 - Improve — Choose and Pilot a Countermeasure](labs/lab-04-improve-choose-and-pilot-a-countermeasure.md)
 
-- Paper worksheets and sticky notes
+### Control — Hold the Gain
+
+- [Lab 5 - Control — Hold the Gain and Hand Over](labs/lab-05-control-hold-the-gain-and-hand-over.md)
+
+---
+
+## Repository structure
+
+```
+courseware/          slide deck (PPTX + PDF), Learner Guide, Lesson Plan
+  archive/           superseded deck versions
+  assets/            diagrams and images used by the deck
+labs/                the 5 lab worksheets + index + toolkit
+LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.md
+                     Learner Guide (Markdown mirror of the DOCX)
+.claude/skills/courseware-build/build/
+                     single-source generators: one content module
+                     drives the deck, LP, LG and labs
+```
+
+All artifacts are generated from `course_data.py` + `data_domainN.py`, so the deck, Lesson Plan, Learner Guide and labs stay 100% aligned.
+
+## Interactive tools
+
+- [5 Whys](https://alfredang.github.io/5whys/) — root-cause chain builder
+- [Fishbone Diagram](https://alfredang.github.io/fishbone/) — Ishikawa cause-and-effect builder
+- [Pareto Chart](https://alfredang.github.io/paretochart/) — collaborative team brainstorm, vote and live chart
+- [NovaSPC](https://alfredang.github.io/novaspc/) — run charts, SPC charts and process capability
+
+## Reference
+
+- [Council for Six Sigma Certification - Lean Six Sigma White Belt Certification](https://www.sixsigmacouncil.org/lean-six-sigma-white-belt-certification/)
+- [Course registration page](https://www.tertiarycourses.com.sg/wsq-certified-lean-six-sigma-white-belt-clsswb-training.html)
+- [labs/tools.md](labs/tools.md) - templates, formulas and free tools used in the labs
+
+## Free tools used
+
 - Microsoft Excel, LibreOffice Calc, or Google Sheets
-- Draw.io / diagrams.net for process sketches
-- Whiteboard for team discussion
-- Free Lean Six Sigma templates where permitted by trainer
+- Draw.io / diagrams.net for SIPOC, process maps and fishbone diagrams
+- The interactive tools listed above
+- Whiteboard or sticky notes for facilitation activities
+
+---
+
+*Version v2 · 19 July 2026 · © 2026 Tertiary Infotech Academy Pte Ltd*
