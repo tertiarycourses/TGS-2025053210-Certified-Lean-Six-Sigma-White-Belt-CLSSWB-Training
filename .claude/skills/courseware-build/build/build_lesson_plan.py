@@ -2,8 +2,8 @@
 """Generate the CLSSYB Lesson Plan (LP) DOCX in the Tertiary house format.
 
 Cover page + Document Version Control Record + auto TOC + Arial 11pt body +
-colour-coded 2-day schedule tables (9:30am-6:30pm, 8 training hours/day, 1h
-lunch, tea within, final assessment Day 1 5:30pm). Topics/labs come from
+colour-coded schedule tables (9:30am-6:30pm, 8 training hours/day, 1h
+lunch, tea within, final assessment Day 1 5:30pm). Topics/activities come from
 course_data + the domain data files so the LP stays aligned with the deck,
 guide and labs.
 """
@@ -41,9 +41,9 @@ def lab_titles(nums):
 
 # ------------------------------------------------ slide ranges (read from the built deck)
 def _scan_deck():
-    """Build ONE ordered index of every section start and every lab start in the
+    """Build ONE ordered index of every section start and every activity start in the
     deck. Ranges are then derived by taking the next boundary of ANY kind, so a
-    section's teaching range stops where its labs begin, and a lab range stops
+    section's teaching range stops where its labs begin, and an activity range stops
     where the next section begins."""
     try:
         import re
@@ -139,7 +139,7 @@ SCHEDULE = {
     ("15:45","16:15",30,"lab","Hands-on Activity: "+lab_titles([3])+" using the 5 Whys and Fishbone tools"+sll([3])),
     ("16:15","16:35",20,"topic","DMAIC · IMPROVE — generating solutions; impact/effort screening; 5S; mistake proofing (Poka-Yoke); standard work; piloting"+sl("Improve")+". Hands-on: "+lab_titles([4])+sll([4])),
     ("16:35","16:55",20,"topic","DMAIC · CONTROL — the control plan; visual management; SOPs; team huddles; handover"+sl("Control")+". Hands-on: "+lab_titles([5])+sll([5])),
-    ("16:55","17:30",35,"assess","Course recap, revision and Briefing for Assessment"+sl("Wrap-up")),
+    ("16:55","17:30",35,"recap","Course recap, revision and Briefing for Assessment"+sl("Wrap-up")),
     ("17:30","18:00",30,"assess","Written Assessment (WA) — Short-Answer Questions (SAQ), 30 minutes, open book"),
     ("18:00","18:30",30,"assess","Case Study (CS) — applied Lean Six Sigma scenario tasks, 30 minutes, open book. PM digital attendance"),
  ]),
@@ -156,19 +156,22 @@ prodoc.add_cover_page(doc,"LESSON PLAN",C.TITLE,C.VERSION.lstrip("v"),
 prodoc.add_version_control(doc,[
  ("1","1 July 2026","Initial release — CLSSWB 1-day lesson plan for the Lean Six Sigma awareness course.",C.TRAINER),
  ("2",C.VERSION_DATE,"Lesson plan rebuilt from the single-source content module. Schedule restructured to "
-  "follow the DMAIC roadmap end to end within one 8-hour training day, with exactly one hands-on lab per "
+  "follow the DMAIC roadmap end to end within one 8-hour training day, with exactly one hands-on activity per "
   "DMAIC phase (5 labs) on a single continuous scenario. Content simplified to White Belt awareness "
   "depth: sigma-level and DPMO calculation, MSA, FMEA, value stream mapping, Kano analysis, weighted "
   "solution-selection matrices and SPC control limits removed. Assessment aligned to the TMS record: WA (SAQ, 30 min) "
   "plus Case Study (30 min); slide references added to the schedule.",C.TRAINER),
- ("3",C.VERSION_DATE,"Lab data pack added: each lab is now a self-contained folder with its mock "
+ ("3",C.VERSION_DATE,"Lab data pack added: each activity is now a self-contained folder with its mock "
   "dataset (CSV + Excel), blank templates, a worked model answer and facilitator notes. The Lab "
-  "Reference table now shows the data pack issued for each lab, and the lab steps reference the "
+  "Reference table now shows the data pack issued for each activity, and the lab steps reference the "
   "specific data and template files the learner works from.",C.TRAINER),
  ("4",C.VERSION_DATE,"Labs restructured into the house ACTIVITY format: activities/ replaces "
   "labs/, one folder per activity named 'NN - Title', each holding the Facilitator Guide, Learner "
   "Worksheet and Checklist as DOCX and PDF plus its data pack. Lab Reference table relabelled to "
   "Activity Reference.",C.TRAINER),
+ ("5",C.VERSION_DATE,"Terminology aligned: 'Lab N' now reads 'Activity N' throughout, matching the "
+  "activities/ folder names and the Case Study citations. Schedule footnote clarified to state "
+  "that the 480-minute total counts scheduled time excluding the lunch break.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
@@ -227,8 +230,9 @@ for day,(theme,rows) in SCHEDULE.items():
     # widths
     for row in tbl.rows:
         row.cells[0].width=Inches(1.15); row.cells[1].width=Inches(0.9); row.cells[2].width=Inches(4.75)
-    p=doc.add_paragraph(); r=p.add_run(f"Total training time: {training} minutes ({training//60} hours)."); r.italic=True; r.font.size=Pt(9.5); r.font.color.rgb=GREY
-    assert training==480, f"Day {day} training minutes = {training}, expected 480"
+    p=doc.add_paragraph(); r=p.add_run(f"Total training time: {training} minutes ({training//60} hours) — scheduled time from {rows[0][0]} to {rows[-1][1]}, excluding the 1-hour lunch break."); r.italic=True; r.font.size=Pt(9.5); r.font.color.rgb=GREY
+    assert training==480, (f"Day {day} training minutes = {training}, expected 480 "
+                           f"(scheduled time excluding the lunch break)")
 
 H("Activity Reference (aligned to the DMAIC phases)",1)
 tt=doc.add_table(rows=0,cols=4); tt.style="Table Grid"

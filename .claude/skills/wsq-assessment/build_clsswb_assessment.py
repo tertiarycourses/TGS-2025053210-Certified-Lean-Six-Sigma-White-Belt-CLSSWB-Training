@@ -36,7 +36,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH as AL, WD_BREAK
 # ----------------------------------------------------------------- config
 TITLE = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 COURSE_CODE = "TGS-2025053210"
-VERSION = "v4"
+VERSION = "v5"
 WA_MINUTES = "30 minutes"
 CS_MINUTES = "30 minutes"
 
@@ -443,7 +443,7 @@ def candidate_page(d, minutes, extra=None):
     for t in [
         "1. This is an individual exercise.",
         "2. This is an open book assessment. You may refer to the course slides, the Learner Guide "
-        "and your own lab outputs.",
+        "and your own activity outputs.",
         f"3. A total of {minutes} is given to complete this assessment.",
         "4. Answer ALL questions in the space provided on this document.",
         "5. Submit your completed answers on the LMS at https://lms-tms.tertiaryinfotech.com/",

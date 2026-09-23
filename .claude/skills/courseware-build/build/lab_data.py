@@ -1,7 +1,7 @@
 """
 SINGLE SOURCE for the LAB DATA PACK — Certified Lean Six Sigma White Belt.
 
-Every lab folder's mock dataset, blank template, worked model answer and
+Every activity folder's mock dataset, blank template, worked model answer and
 facilitator notes is defined here, so the lab pack can never drift out of
 alignment with course_data.py / data_domainN.py (which define the lab steps)
 or with the assessment (which uses the same BrewBean Cafe scenario).
@@ -12,9 +12,9 @@ DESIGN RULES (White Belt = AWARENESS depth):
   * Every figure is consistent with the assessment scenario: 7:30-9:00am rush,
     up to 15-minute waits against a 5-minute promise, one till open of two,
     milk fetched from the back store, orders re-keyed, drinks remade.
-  * The numbers are internally consistent ACROSS labs: the Lab 2 observation
-    log is the evidence base for the Lab 3 Pareto, and the Lab 5 post-pilot
-    figures follow from the Lab 4 countermeasure.
+  * The numbers are internally consistent ACROSS labs: the Activity 2 observation
+    log is the evidence base for the Activity 3 Pareto, and the Activity 5 post-pilot
+    figures follow from the Activity 4 countermeasure.
   * Data is generated deterministically (fixed seed) so every rebuild produces
     byte-identical files and the model answers stay true.
 
@@ -25,9 +25,9 @@ Each entry in LAB_DATA is keyed by lab number and carries:
     facilitator: dict(timing, setup, watch, mistakes, debrief)
 """
 
-# ------------------------------------------------------------------ Lab 2 raw observation log
+# ------------------------------------------------------------------ Activity 2 raw observation log
 # 60 observed customers across the 7:30-9:00am rush on one weekday morning.
-# Built deterministically so the Pareto in Lab 3 and the baseline in Lab 5
+# Built deterministically so the Pareto in Activity 3 and the baseline in Activity 5
 # always reconcile to the same totals.
 
 _TIME_BANDS = [
@@ -40,7 +40,7 @@ _TIME_BANDS = [
 
 _DRINKS = ["Latte", "Flat White", "Cappuccino", "Americano", "Espresso", "Mocha"]
 
-# Delay reason -> how often it occurs. These frequencies ARE the Lab 3 Pareto:
+# Delay reason -> how often it occurs. These frequencies ARE the Activity 3 Pareto:
 # milk restocking is the vital few, matching the assessment's model 5 Whys chain.
 _DELAY_REASONS = [
     ("Waiting for milk restock", 18),
@@ -131,7 +131,7 @@ PEAK_AVG = round(sum(_peak) / len(_peak), 1)
 OVER_PROMISE = sum(1 for w in _waits if w > 5.0)
 PCT_OVER = round(OVER_PROMISE / N_OBS * 100)
 
-# Pareto table (Lab 3) derived straight from the Lab 2 log
+# Pareto table (Activity 3) derived straight from the Activity 2 log
 _counts = {}
 for r in OBSERVATION_ROWS:
     if r[6] != "No delay observed":
@@ -149,7 +149,7 @@ for reason, n in sorted(_counts.items(), key=lambda kv: -kv[1]):
 VITAL_FEW = [p[0] for p in PARETO_ROWS[:2]]
 VITAL_FEW_PCT = PARETO_ROWS[1][3]
 
-# ------------------------------------------------------------------ Lab 1
+# ------------------------------------------------------------------ Activity 1
 LAB1 = dict(
     datasets=[
         dict(
@@ -292,7 +292,7 @@ LAB1 = dict(
     ),
 )
 
-# ------------------------------------------------------------------ Lab 2
+# ------------------------------------------------------------------ Activity 2
 LAB2 = dict(
     datasets=[
         dict(
@@ -301,7 +301,7 @@ LAB2 = dict(
             desc=f"{N_OBS} customers observed end to end during one weekday morning rush at "
                  "BrewBean Cafe. Wait time is measured from the customer joining the queue to "
                  "the drink being handed over. This is THE baseline dataset for the course — "
-                 "Lab 3's Pareto is derived from the Delay Reason column and Lab 5's control "
+                 "Activity 3's Pareto is derived from the Delay Reason column and Activity 5's control "
                  "chart compares back to it.",
             headers=["Customer ID", "Time Joined Queue", "Time Band", "Drink Ordered",
                      "Wait Time (min)", "Drink Remade", "Delay Reason Observed"],
@@ -435,7 +435,7 @@ LAB2 = dict(
             "",
             f"LARGEST WASTE BY COUNT AND BY TIME: W - Waiting, at step 2 and step 8.",
             "The most ACTIONABLE waste is M - Motion / N - Non-utilised talent at step 10, because",
-            "it has a single obvious cause the team can remove. That is the thread Lab 3 pulls.",
+            "it has a single obvious cause the team can remove. That is the thread Activity 3 pulls.",
         ]),
         ("Baseline figures (model)", [
             f"Customers observed:        {N_OBS}",
@@ -445,7 +445,7 @@ LAB2 = dict(
             f"Customers over the 5-min promise: {OVER_PROMISE} of {N_OBS}  ({PCT_OVER}%)",
             f"Drinks remade:             {N_REMAKE}",
             "",
-            "These are the numbers Lab 5 measures the improvement against. Learners should write",
+            "These are the numbers Activity 5 measures the improvement against. Learners should write",
             "them down — the Case Study expects a baseline to be quoted, not invented.",
         ]),
     ],
@@ -465,22 +465,22 @@ LAB2 = dict(
             "Tallying waste from memory instead of from the data. Point them back at the log.",
             "Recording zero for a waste type and treating that as a failure. Zero with evidence "
             "is a legitimate, well-supported answer.",
-            "Jumping to 'hire more staff' during the waste walk. Park it — solutions are Lab 4.",
+            "Jumping to 'hire more staff' during the waste walk. Park it — solutions are Activity 4.",
         ],
         debrief="Put the baseline figures on the board and ask: which single step would you "
                 f"attack first? Most rooms say the queue (step 2). Push back — the queue is the "
                 "SYMPTOM. Step 10 (fetching milk) is a cause you can act on, and that hands "
-                "straight over to Lab 3.",
+                "straight over to Activity 3.",
     ),
 )
 
-# ------------------------------------------------------------------ Lab 3
+# ------------------------------------------------------------------ Activity 3
 LAB3 = dict(
     datasets=[
         dict(
             name="delay-reason-pareto-data",
             title="Delay reason Pareto data",
-            desc="The Delay Reason column from the Lab 2 observation log, counted and ranked. "
+            desc="The Delay Reason column from the Activity 2 observation log, counted and ranked. "
                  "This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner "
                  "reads it rather than building it from scratch.",
             headers=["Delay Reason", "Count", "% of Delays", "Cumulative %"],
@@ -654,7 +654,7 @@ LAB3 = dict(
     ),
 )
 
-# ------------------------------------------------------------------ Lab 4
+# ------------------------------------------------------------------ Activity 4
 LAB4 = dict(
     datasets=[
         dict(
@@ -700,7 +700,7 @@ LAB4 = dict(
             title="Pilot week results",
             desc="What actually happened when the chosen countermeasure was piloted for one week. "
                  "The same 60-customer observation was repeated each day. Used in Step 7 to "
-                 "judge whether the pilot worked, and carried into Lab 5 as the new baseline.",
+                 "judge whether the pilot worked, and carried into Activity 5 as the new baseline.",
             headers=["Day", "Date", "Customers Observed", "Avg Wait (min)", "Longest Wait (min)",
                      "Drinks Remade", "Mid-order Milk Trips", "Restock Done Before 07:30?"],
             rows=[
@@ -714,7 +714,7 @@ LAB4 = dict(
             notes="Thursday is deliberately bad — the opening staff member was on leave and the "
                   "restock was missed. That single row is the most important teaching point in "
                   "the lab: the countermeasure works, but nothing yet HOLDS it in place. That is "
-                  "exactly what Lab 5 (Control) exists to fix.",
+                  "exactly what Activity 5 (Control) exists to fix.",
         ),
     ],
     templates=[
@@ -754,7 +754,7 @@ LAB4 = dict(
             "",
             "SELECTED: Option A — add counter milk restock to the 7:00am opening checklist.",
             "Why: it is the highest impact on the grid, costs nothing, can start tomorrow, and it",
-            "addresses the root cause proved in Lab 3 rather than the symptom. A White Belt",
+            "addresses the root cause proved in Activity 3 rather than the symptom. A White Belt",
             "countermeasure should be small enough to try next week — this one is.",
             "",
             "Reject an answer that selects F (the pre-order app): it may be a good idea, but it is",
@@ -803,7 +803,7 @@ LAB4 = dict(
             "",
             "Ask the room: what would stop Thursday happening again? Every answer they give — a",
             "checklist that is signed, a visual board, an SOP, a daily huddle, a named owner, a",
-            "reaction plan — is a CONTROL. That is Lab 5.",
+            "reaction plan — is a CONTROL. That is Activity 5.",
         ]),
     ],
     facilitator=dict(
@@ -815,7 +815,7 @@ LAB4 = dict(
             "Learners choosing the exciting option (the app) over the effective one. Ask which "
             "root cause it addresses — usually none that was proved.",
             "Countermeasures aimed at the symptom ('hire more staff so the queue is shorter'). "
-            "Send them back to their Lab 3 shortlist.",
+            "Send them back to their Activity 3 shortlist.",
             "Standard work written as a paragraph of prose. It must be numbered steps with a "
             "check anyone could apply.",
         ],
@@ -829,11 +829,11 @@ LAB4 = dict(
         ],
         debrief="Reveal pilot-week-results only after the pilot plans are written. Walk the week "
                 "day by day and let the room spot Thursday themselves. Then ask what would have "
-                "prevented it — and write their answers on the board as the agenda for Lab 5.",
+                "prevented it — and write their answers on the board as the agenda for Activity 5.",
     ),
 )
 
-# ------------------------------------------------------------------ Lab 5
+# ------------------------------------------------------------------ Activity 5
 LAB5 = dict(
     datasets=[
         dict(
@@ -921,7 +921,7 @@ LAB5 = dict(
             "THE ONE MEASURE: average customer wait time, 07:30-09:00, measured daily.",
             "",
             "Why this one: it is the measure the CUSTOMER experiences, it maps directly to the",
-            "5-minute CTQ from Lab 1, and it moves whenever the process slips — as week 3 proves.",
+            "5-minute CTQ from Activity 1, and it moves whenever the process slips — as week 3 proves.",
             "",
             "A good secondary measure is 'counter milk restocked before 07:15 - yes/no', because",
             "it is a LEADING indicator: it goes wrong BEFORE the wait time does. In week 3 the",

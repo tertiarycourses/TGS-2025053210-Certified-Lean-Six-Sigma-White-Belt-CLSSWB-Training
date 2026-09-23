@@ -28,7 +28,7 @@ data_domainN.py so they stay 100% aligned.
 TITLE        = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 SHORT_TITLE  = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 COURSE_CODE  = "TGS-2025053210"
-VERSION      = "v4"
+VERSION      = "v5"
 VERSION_DATE = "23 September 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -63,7 +63,7 @@ LEARNING_OUTCOMES = [
 ]
 
 # ------------------------------------------------------------------ topics
-# One topic per DMAIC phase, plus Foundations. Exactly one lab per DMAIC phase.
+# One topic per DMAIC phase, plus Foundations. Exactly one activity per DMAIC phase.
 TOPICS = [
     dict(num=0, code="00", phase="FOUNDATIONS",
          title="Lean Six Sigma Foundations",

@@ -8,7 +8,7 @@ Each entry is keyed by activity number (1..5) and provides:
   tips       -- facilitator notes: what to watch for, common wrong turns
 
 The instruction text is the authoritative long-form of the step; the short form
-in data_domainN.py drives the slides and the labs README. Both run on the same
+in data_domainN.py drives the slides and the activities README. Both run on the same
 continuous BrewBean Cafe scenario, and every activity works from the mock data
 in the activity's own data/ folder (see lab_data.py).
 """
@@ -120,7 +120,7 @@ STEPS = {
         ("Write down the baseline",
          "Record the average wait, the longest wait, the percentage of customers over the "
          "5-minute promise, and the number of drinks remade. Identify which single waste "
-         "type you tallied most often and at which step. Lab 5 measures the improvement "
+         "type you tallied most often and at which step. Activity 5 measures the improvement "
          "against these numbers, and the Case Study expects a baseline to be quoted rather "
          "than invented."),
     ],
@@ -141,7 +141,7 @@ STEPS = {
         "course teaches and note that a label is neither.",
         "Some tables tally waste from memory. Point them back to the data — the tally must "
         "be evidence, not impression.",
-        "Park any 'hire more staff' suggestions. Solutions are Lab 4; this phase is facts.",
+        "Park any 'hire more staff' suggestions. Solutions are Activity 4; this phase is facts.",
     ]),
 
 # ================================================================= ANALYZE
@@ -156,7 +156,7 @@ STEPS = {
              "root causes each backed by evidence.",
     steps=[
         ("State the symptom",
-         "Write the symptom from your Lab 2 baseline at the top of "
+         "Write the symptom from your Activity 2 baseline at the top of "
          "templates/5-whys-template.csv — for example 'customers wait an average of 8.9 "
          "minutes against a 5-minute promise'. Start from the measured symptom, not from a "
          "theory about the cause."),
@@ -175,7 +175,7 @@ STEPS = {
          "ones the data actually supports — some entries there are pure opinion, and "
          "telling them apart is the point."),
         ("Read the Pareto",
-         "Open data/delay-reason-pareto-data.csv — the delay reasons from your Lab 2 log, "
+         "Open data/delay-reason-pareto-data.csv — the delay reasons from your Activity 2 log, "
          "counted and ranked. Read the Cumulative % column and state which few causes "
          "account for most of the problem. Remember the Pareto ranks FREQUENCY, which is "
          "usually but not always the same as importance."),
@@ -224,7 +224,7 @@ STEPS = {
              "pilot plan naming a measure, an owner and a review date.",
     steps=[
         ("Restate the root cause",
-         "Write your top root cause from Lab 3 at the top of "
+         "Write your top root cause from Activity 3 at the top of "
          "templates/countermeasure-brainstorm-template.csv. Every idea from here on must "
          "address THIS cause. The discipline of Improve is solving the cause you proved, "
          "not the symptom you started with."),
@@ -259,7 +259,7 @@ STEPS = {
     ],
     checklist=[
         "At least six countermeasures were generated before any was judged.",
-        "Every countermeasure addresses the root cause from Lab 3, not the symptom.",
+        "Every countermeasure addresses the root cause from Activity 3, not the symptom.",
         "All options are plotted on the grid and exactly ONE is selected.",
         "The selection sits in the high-impact, low-effort corner, or is justified if not.",
         "The standard work is short numbered steps with a done/not-done check.",
@@ -272,11 +272,11 @@ STEPS = {
         "Watch for tables choosing the exciting option (the pre-order app) over the "
         "effective one. Ask which proved root cause it addresses.",
         "Send back any countermeasure aimed at the symptom ('hire more staff so the queue "
-        "is shorter') to the Lab 3 shortlist.",
+        "is shorter') to the Activity 3 shortlist.",
         "Standard work written as a paragraph of prose is not standard work. Numbered steps.",
         "Thursday is the teaching point of the whole lab: the restock was missed and every "
         "measure snapped back. Let the room find it, then ask what would have prevented it "
-        "— every answer they give is a CONTROL, and that is the agenda for Lab 5.",
+        "— every answer they give is a CONTROL, and that is the agenda for Activity 5.",
     ]),
 
 # ================================================================= CONTROL
@@ -310,7 +310,7 @@ STEPS = {
          "shift on day one. A run of the daily figure beats a single number, because drift "
          "shows up as a trend long before anyone calls it a problem."),
         ("Write the SOP",
-         "In templates/sop-and-huddle-template.csv, turn your Lab 4 standard work into a "
+         "In templates/sop-and-huddle-template.csv, turn your Activity 4 standard work into a "
          "short SOP the cafe could actually pin up — and state how anyone would know the "
          "step was done."),
         ("Plan the daily huddle",

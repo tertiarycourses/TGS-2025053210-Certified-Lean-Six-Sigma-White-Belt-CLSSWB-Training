@@ -2,7 +2,7 @@
 
 **Measure — Map the Process and Spot the Waste**
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
 
 > **Use this AFTER you have attempted the activity.** There is rarely one right answer in Lean Six Sigma — what matters is whether your reasoning is supported by the data. Compare your thinking with the model, not just your wording.
 
@@ -70,7 +70,7 @@ E - Extra-processing: writing the order on the cup and then re-keying it into th
 
 LARGEST WASTE BY COUNT AND BY TIME: W - Waiting, at step 2 and step 8.
 The most ACTIONABLE waste is M - Motion / N - Non-utilised talent at step 10, because
-it has a single obvious cause the team can remove. That is the thread Lab 3 pulls.
+it has a single obvious cause the team can remove. That is the thread Activity 3 pulls.
 ```
 
 ## Baseline figures (model)
@@ -83,10 +83,10 @@ Average wait at 08:00-08:30 peak: 12.4 min
 Customers over the 5-min promise: 49 of 60  (82%)
 Drinks remade:             7
 
-These are the numbers Lab 5 measures the improvement against. Learners should write
+These are the numbers Activity 5 measures the improvement against. Learners should write
 them down — the Case Study expects a baseline to be quoted, not invented.
 ```
 
 ---
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5 · © 2026 Tertiary Infotech Academy Pte Ltd*

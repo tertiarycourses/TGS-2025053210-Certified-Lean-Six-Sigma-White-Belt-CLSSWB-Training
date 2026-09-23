@@ -1,6 +1,6 @@
 # Activity 4 — Data Pack
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
 
 All figures below are **mock data** created for training. They describe the BrewBean Cafe morning rush scenario used by every activity in this course, and they are internally consistent across the five activities — the Activity 2 observation log is the evidence base for the Activity 3 Pareto, and the Activity 5 monitoring data follows on from the Activity 4 pilot.
 
@@ -36,7 +36,7 @@ Twelve candidate countermeasures the team generated against the shortlisted root
 
 **File:** `pilot-week-results.csv`  |  **Rows:** 6
 
-What actually happened when the chosen countermeasure was piloted for one week. The same 60-customer observation was repeated each day. Used in Step 7 to judge whether the pilot worked, and carried into Lab 5 as the new baseline.
+What actually happened when the chosen countermeasure was piloted for one week. The same 60-customer observation was repeated each day. Used in Step 7 to judge whether the pilot worked, and carried into Activity 5 as the new baseline.
 
 | Column | Description |
 |--------|-------------|
@@ -49,7 +49,7 @@ What actually happened when the chosen countermeasure was piloted for one week. 
 | `Mid-order Milk Trips` | |
 | `Restock Done Before 07:30?` | |
 
-**Note:** Thursday is deliberately bad — the opening staff member was on leave and the restock was missed. That single row is the most important teaching point in the lab: the countermeasure works, but nothing yet HOLDS it in place. That is exactly what Lab 5 (Control) exists to fix.
+**Note:** Thursday is deliberately bad — the opening staff member was on leave and the restock was missed. That single row is the most important teaching point in the lab: the countermeasure works, but nothing yet HOLDS it in place. That is exactly what Activity 5 (Control) exists to fix.
 
 ---
 

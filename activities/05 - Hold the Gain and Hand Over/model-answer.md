@@ -2,7 +2,7 @@
 
 **Control — Hold the Gain and Hand Over**
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
 
 > **Use this AFTER you have attempted the activity.** There is rarely one right answer in Lean Six Sigma — what matters is whether your reasoning is supported by the data. Compare your thinking with the model, not just your wording.
 
@@ -12,7 +12,7 @@
 THE ONE MEASURE: average customer wait time, 07:30-09:00, measured daily.
 
 Why this one: it is the measure the CUSTOMER experiences, it maps directly to the
-5-minute CTQ from Lab 1, and it moves whenever the process slips — as week 3 proves.
+5-minute CTQ from Activity 1, and it moves whenever the process slips — as week 3 proves.
 
 A good secondary measure is 'counter milk restocked before 07:15 - yes/no', because
 it is a LEADING indicator: it goes wrong BEFORE the wait time does. In week 3 the
@@ -126,4 +126,4 @@ control, owner. The Case Study expects the same arc.
 
 ---
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5 · © 2026 Tertiary Infotech Academy Pte Ltd*

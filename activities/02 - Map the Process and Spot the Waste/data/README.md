@@ -1,6 +1,6 @@
 # Activity 2 — Data Pack
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
 
 All figures below are **mock data** created for training. They describe the BrewBean Cafe morning rush scenario used by every activity in this course, and they are internally consistent across the five activities — the Activity 2 observation log is the evidence base for the Activity 3 Pareto, and the Activity 5 monitoring data follows on from the Activity 4 pilot.
 
@@ -19,7 +19,7 @@ All figures below are **mock data** created for training. They describe the Brew
 
 **File:** `morning-rush-observation-log.csv`  |  **Rows:** 60
 
-60 customers observed end to end during one weekday morning rush at BrewBean Cafe. Wait time is measured from the customer joining the queue to the drink being handed over. This is THE baseline dataset for the course — Lab 3's Pareto is derived from the Delay Reason column and Lab 5's control chart compares back to it.
+60 customers observed end to end during one weekday morning rush at BrewBean Cafe. Wait time is measured from the customer joining the queue to the drink being handed over. This is THE baseline dataset for the course — Activity 3's Pareto is derived from the Delay Reason column and Activity 5's control chart compares back to it.
 
 | Column | Description |
 |--------|-------------|

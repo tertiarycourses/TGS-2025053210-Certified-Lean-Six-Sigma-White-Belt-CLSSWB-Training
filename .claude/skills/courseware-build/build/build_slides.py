@@ -5,7 +5,7 @@ Structure:
   Cover → Admin (TRAQOM, trainers x2, ground rules, LMS, lesson plan, TSC,
   outcomes, course outline, briefing, assessment, assessment flow)
   → Foundations → D → M → A → I → C  (each phase: concept slides then its labs)
-  → Wrap-up → Assessment → Assessment Flow → Digital Attendance → TRAQOM → Thank You
+  → Wrap-up → TRAQOM → Certificate → Assessment → Assessment Flow → Digital Attendance → Thank You
 
 Content comes entirely from course_data.py + data_domainN.py + concepts.py so the
 PPT, LP, LG and labs stay 100% aligned.
@@ -120,17 +120,17 @@ d.two_col("Lesson Plan — 1 Day, 8 Hours",
            ("Foundations: Quality, Lean, Six Sigma, Lean Six Sigma", 1),
            ("Belt roles and the DMAIC roadmap", 1),
            ("DEFINE: VOC, CTQ, problem statement, SMART goal", 1),
-           ("Lab 1 — Define: requirements and problem statement", 1),
+           ("Activity 1 — Define: requirements and problem statement", 1),
            ("MEASURE: process mapping, SIPOC, data, the 8 wastes", 1),
-           ("Lab 2 — Measure: map the process, spot the waste", 1)],
+           ("Activity 2 — Measure: map the process, spot the waste", 1)],
           [("Afternoon — Analyze, Improve, Control", 0),
            ("Digital attendance (PM)", 1),
            ("ANALYZE: root cause, 5 Whys, Fishbone, Pareto", 1),
-           ("Lab 3 — Analyze: find the root cause", 1),
+           ("Activity 3 — Analyze: find the root cause", 1),
            ("IMPROVE: solutions, 5S, mistake proofing, piloting", 1),
-           ("Lab 4 — Improve: choose and pilot a countermeasure", 1),
+           ("Activity 4 — Improve: choose and pilot a countermeasure", 1),
            ("CONTROL: control plan, visual management, handover", 1),
-           ("Lab 5 — Control: hold the gain · Revision", 1),
+           ("Activity 5 — Control: hold the gain · Revision", 1),
            ("Briefing · Final Assessment (WA + CS)", 1)],
           kicker="SCHEDULE · 9:30am-6:30pm with a 1-hour lunch",
           lhead="Morning", rhead="Afternoon")
@@ -150,11 +150,11 @@ d.tile_grid("Learning Outcomes", [
 ], kicker="WHAT YOU'LL ACHIEVE", cols=2, size=14)
 
 d.dmaic_wheel("Course Outline — We Follow DMAIC End to End", [
-    ("D", "Define", ["VOC and CTQ", "Problem statement", "SMART goal, charter", "Lab 1"]),
-    ("M", "Measure", ["Process mapping, SIPOC", "Types of data", "The 8 wastes", "Lab 2"]),
-    ("A", "Analyze", ["Root cause", "5 Whys, Fishbone", "Pareto, variation", "Lab 3"]),
-    ("I", "Improve", ["Generating solutions", "5S, mistake proofing", "Standard work, pilot", "Lab 4"]),
-    ("C", "Control", ["Control plan", "Visual management", "SOPs and handover", "Lab 5"]),
+    ("D", "Define", ["VOC and CTQ", "Problem statement", "SMART goal, charter", "Activity 1"]),
+    ("M", "Measure", ["Process mapping, SIPOC", "Types of data", "The 8 wastes", "Activity 2"]),
+    ("A", "Analyze", ["Root cause", "5 Whys, Fishbone", "Pareto, variation", "Activity 3"]),
+    ("I", "Improve", ["Generating solutions", "5S, mistake proofing", "Standard work, pilot", "Activity 4"]),
+    ("C", "Control", ["Control plan", "Visual management", "SOPs and handover", "Activity 5"]),
 ], kicker="COURSE ROADMAP")
 
 # --- Briefing BEFORE assessment (house hard rule) ---
@@ -205,7 +205,7 @@ TOPIC_ACTS = {t["num"]: [a for a in ACTIVITIES if a["topic"] == t["num"]] for t 
 def render_labs(acts, phase_label):
     for a in acts:
         opt = a.get("elective", False)
-        tag = f"LAB {a['num']}"
+        tag = f"ACTIVITY {a['num']}"
         d.activity_overview(tag, a["title"], a["desc"], a["build"], a["services"],
                             kicker=f"{phase_label} · HANDS-ON", elective=opt)
         # what the learner has been given to work from, before the steps begin
@@ -219,8 +219,8 @@ def render_labs(acts, phase_label):
                               "Worksheets to fill in — one per step group"))
             tiles.append((f"A{a['num']:02d}-Data-Workbook.xlsx",
                           "Every dataset and template, one per tab"))
-            d.tile_grid(f"Your Data Pack — Lab {a['num']}", tiles,
-                        kicker=f"LAB {a['num']} · WHAT YOU HAVE BEEN GIVEN",
+            d.tile_grid(f"Your Data Pack — Activity {a['num']}", tiles,
+                        kicker=f"ACTIVITY {a['num']} · WHAT YOU HAVE BEEN GIVEN",
                         cols=2, size=13)
         steps = a["steps"]
         total = len(steps)
@@ -229,9 +229,9 @@ def render_labs(acts, phase_label):
         # while every step stays on screen for the learner.
         numbered = [(i, instr) for i, (instr, _cmd) in enumerate(steps, 1)]
         for j in range(0, len(numbered), 2):
-            d.step_pair_slide(f"LAB {a['num']} · {short}", a["title"],
+            d.step_pair_slide(f"ACTIVITY {a['num']} · {short}", a["title"],
                               numbered[j:j + 2], total)
-        d.test_slide(a["title"], a["test"], kicker=f"LAB {a['num']} · VERIFY")
+        d.test_slide(a["title"], a["test"], kicker=f"ACTIVITY {a['num']} · VERIFY")
 
 
 # Foundations labs (topic 0) come right after the foundations concepts
@@ -254,11 +254,11 @@ for t in C.TOPICS:
         opts = [a for a in acts if a.get("elective")]
         rows = []
         for a in core:
-            rows.append((f"Lab {a['num']} — {a['title'][:46]}", a["build"][:70]))
+            rows.append((f"Activity {a['num']} — {a['title'][:46]}", a["build"][:70]))
         for a in opts:
-            rows.append((f"Lab {a['num']} (elective) — {a['title'].replace('Elective — ', '')[:40]}",
+            rows.append((f"Activity {a['num']} (elective) — {a['title'].replace('Elective — ', '')[:40]}",
                          a["build"][:70]))
-        d.tile_grid(f"Hands-On Labs — {t['phase'].title()}", rows,
+        d.tile_grid(f"Hands-On Activities — {t['phase'].title()}", rows,
                     kicker="WHAT YOU'LL DO", cols=1, size=14, accent=col)
         render_labs(acts, f"DMAIC · {t['phase']}")
     # phase recap
@@ -307,7 +307,21 @@ d.tile_grid("Continuing Your Lean Six Sigma Journey", [
 ], kicker="NEXT STEPS", cols=2, size=15, accent=AMBER)
 
 # ============================================================ CLOSE (house order)
-# Assessment → Assessment Flow → Digital Attendance → TRAQOM → Thank You
+# TRAQOM → Certificate → Assessment → Assessment Flow → Digital Attendance → Thank You
+d.flow_h("TRAQOM Survey", [
+    "Open the TRAQOM survey link on the LMS",
+    "Key in the last four characters of your NRIC/FIN",
+    "Key in the six-digit course run ID",
+    "Complete and submit — your feedback shapes this course",
+], kicker="YOUR FEEDBACK", color=TEAL)
+
+d.content("Certificate & Support", [
+    "Two e-certificates are awarded on demonstrating competency and achieving at least 75% attendance.",
+    "A SkillsFuture Statement of Attainment (SOA) is issued for the WSQ assessment.",
+    "Email: enquiry@tertiaryinfotech.com",
+    "Tel / WhatsApp: +65 6100 0613",
+], kicker="AFTER THE COURSE")
+
 d.big_statement("Final Assessment",
                 "Written Assessment (SAQ, 30 minutes) followed by the Case Study (30 minutes). Both are open book.",
                 "ASSESSMENT", color=VIOLET)
@@ -326,20 +340,6 @@ d.flow_h("Digital Attendance (Assessment)", [
     "Key in your NRIC/FIN and submit",
     "Attendance must be recorded before you begin the papers",
 ], kicker="TRAQOM · SSG DIGITAL ATTENDANCE", color=BLUE)
-
-d.flow_h("TRAQOM Survey", [
-    "Open the TRAQOM survey link on the LMS",
-    "Key in the last four characters of your NRIC/FIN",
-    "Key in the six-digit course run ID",
-    "Complete and submit — your feedback shapes this course",
-], kicker="YOUR FEEDBACK", color=TEAL)
-
-d.content("Certificate & Support", [
-    "Two e-certificates are awarded on demonstrating competency and achieving at least 75% attendance.",
-    "A SkillsFuture Statement of Attainment (SOA) is issued for the WSQ assessment.",
-    "Email: enquiry@tertiaryinfotech.com",
-    "Tel / WhatsApp: +65 6100 0613",
-], kicker="AFTER THE COURSE")
 
 d.big_statement("Thank You!",
                 "Go and spot one waste in your own process this month — that is where every improvement starts.",

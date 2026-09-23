@@ -1,5 +1,5 @@
 """
-Lab 2 — MEASURE phase. Continues the BrewBean Cafe running scenario.
+Activity 2 — MEASURE phase. Continues the BrewBean Cafe running scenario.
 
 Awareness depth: the learner maps a process and tallies waste using supplied
 templates. No sigma level, no DPMO, no MSA — those are Yellow Belt and above.
@@ -23,7 +23,7 @@ DOMAIN2 = [
             ("Mark each step VA or NVA in the template — the test is whether the customer would pay extra for THAT step — and write one line saying why.", ""),
             ("Look at the columns in data/morning-rush-observation-log.csv and classify each: which figures are discrete (counted) and which are continuous (measured)?", ""),
             ("Open data/downtime-waste-tally.csv — three rows are completed as worked examples. Using the observation log and the step timings as your evidence, complete the remaining five rows in templates/downtime-tally-template.csv.", ""),
-            ("Identify which single waste type you tallied most often and at which process step, then write down the baseline figures (average wait, longest wait, % over the 5-minute promise, drinks remade) — Lab 5 measures the improvement against them.", ""),
+            ("Identify which single waste type you tallied most often and at which process step, then write down the baseline figures (average wait, longest wait, % over the 5-minute promise, drinks remade) — Activity 5 measures the improvement against them.", ""),
         ],
         duration='30 minutes',
         case_scenario=[

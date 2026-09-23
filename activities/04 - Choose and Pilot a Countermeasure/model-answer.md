@@ -2,7 +2,7 @@
 
 **Improve — Choose and Pilot a Countermeasure**
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
 
 > **Use this AFTER you have attempted the activity.** There is rarely one right answer in Lean Six Sigma — what matters is whether your reasoning is supported by the data. Compare your thinking with the model, not just your wording.
 
@@ -22,7 +22,7 @@ LOW IMPACT / HIGH EFFORT — do not do these:
 
 SELECTED: Option A — add counter milk restock to the 7:00am opening checklist.
 Why: it is the highest impact on the grid, costs nothing, can start tomorrow, and it
-addresses the root cause proved in Lab 3 rather than the symptom. A White Belt
+addresses the root cause proved in Activity 3 rather than the symptom. A White Belt
 countermeasure should be small enough to try next week — this one is.
 
 Reject an answer that selects F (the pre-order app): it may be a good idea, but it is
@@ -79,9 +79,9 @@ holds it in place when that person is away.
 
 Ask the room: what would stop Thursday happening again? Every answer they give — a
 checklist that is signed, a visual board, an SOP, a daily huddle, a named owner, a
-reaction plan — is a CONTROL. That is Lab 5.
+reaction plan — is a CONTROL. That is Activity 5.
 ```
 
 ---
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v4 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5 · © 2026 Tertiary Infotech Academy Pte Ltd*

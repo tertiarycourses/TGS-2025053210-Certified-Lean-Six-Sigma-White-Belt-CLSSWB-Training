@@ -1,5 +1,5 @@
 """
-Lab 1 — DEFINE phase.
+Activity 1 — DEFINE phase.
 
 The White Belt has exactly FIVE labs, one per DMAIC phase. All five follow ONE
 running scenario — the BrewBean Cafe morning rush — so the learner carries a

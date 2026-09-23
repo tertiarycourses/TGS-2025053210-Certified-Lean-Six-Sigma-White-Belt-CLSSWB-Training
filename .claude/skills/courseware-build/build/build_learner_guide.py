@@ -3,11 +3,11 @@
 root) and a DOCX (courseware/LG-*.docx) from one source, so they never diverge.
 
 House format: cover page, Document Version Control Record, auto TOC, Arial 11pt
-body, one section per DMAIC phase, one sub-section per lab (Objective · Goal ·
+body, one section per DMAIC phase, one sub-section per activity (Objective · Goal ·
 What you'll build · Step-by-step · Check your work), plus quick-reference
 formulas, assessment preparation and a glossary. All content is driven by
 course_data + the domain data files, keeping the LG 100% aligned with the slide
-deck, Lesson Plan and labs.
+deck, Lesson Plan and activities.
 """
 import os, sys
 from docx import Document
@@ -50,16 +50,16 @@ def rule(): B.append(("rule",))
 h1("Introduction")
 p(f"This Learner Guide accompanies the WSQ course {C.TITLE} ({C.COURSE_CODE}), conducted by {C.ORG}. "
   "This is a one-day Lean Six Sigma awareness course. It follows the DMAIC roadmap end to end — "
-  "Define, Measure, Analyze, Improve, Control — with one hands-on lab in each of the five phases, "
-  "and provides step-by-step instructions for every lab.")
+  "Define, Measure, Analyze, Improve, Control — with one hands-on activity in each of the five phases, "
+  "and provides step-by-step instructions for every activity.")
 p("The course content is grounded in the body of knowledge published by The Council for Six Sigma "
   "Certification (CSSC) in 'Six Sigma: A Complete Step-by-Step Guide', so what you learn here matches "
   "the recognised White Belt standard.")
 p("As a White Belt you are being prepared to CONTRIBUTE to an improvement team — to understand the "
   "language, recognise waste, and support the tools your team uses. You are not expected to lead a "
   "project or perform the statistical analysis; those belong to the Yellow, Green and Black Belt levels.")
-p("Every lab uses one continuous scenario — the BrewBean Cafe morning rush, where customers queue up "
-  "to 15 minutes and orders are sometimes made wrong. By the end of the day your five lab outputs form "
+p("Every activity uses one continuous scenario — the BrewBean Cafe morning rush, where customers queue up "
+  "to 15 minutes and orders are sometimes made wrong. By the end of the day your five activity outputs form "
   "a complete improvement story: customer requirements and problem statement, process map and waste "
   "tally, root cause analysis, a selected countermeasure with a pilot plan, and a control plan.")
 
@@ -77,31 +77,31 @@ h1("Before You Start")
 h3("What you need")
 bullets([
  "A laptop with a spreadsheet application (Microsoft Excel, Google Sheets or LibreOffice Calc), or simply pen and paper.",
- "A browser, for the interactive problem-solving tools used in the Analyze lab.",
+ "A browser, for the interactive problem-solving tools used in the Analyze activity.",
  "The course slides and this Learner Guide, downloaded from https://lms-tms.tertiaryinfotech.com.",
  "A work process of your own to think about — the tools apply far better when the example is real.",
 ])
 h3("The interactive problem-solving toolkit")
-p("Two browser-based tools are used during the labs. No installation or licence is required.")
+p("Two browser-based tools are used during the activities. No installation or licence is required.")
 bullets([
  "5 Whys — build and share a 5 Whys chain: https://alfredang.github.io/5whys/",
  "Fishbone Diagram — build an Ishikawa cause-and-effect diagram: https://alfredang.github.io/fishbone/",
 ])
-h3("How the five labs fit together")
+h3("How the five activities fit together")
 bullets([
- "There are five labs — exactly one for each phase of DMAIC: Define, Measure, Analyze, Improve and Control.",
- "All five labs build on the same BrewBean Cafe scenario, so each lab's output becomes the next lab's input.",
- "Every lab is completed by everyone, and all five map directly to the assessment.",
+ "There are five activities — exactly one for each phase of DMAIC: Define, Measure, Analyze, Improve and Control.",
+ "All five activities build on the same BrewBean Cafe scenario, so each activity's output becomes the next activity's input.",
+ "Every activity is completed by everyone, and all five map directly to the assessment.",
 ])
-h3("Conventions used in every lab")
+h3("Conventions used in every activity")
 bullets([
- "Each lab states its objective, the deliverable you produce, the steps, and a check to confirm you are done.",
+ "Each activity states its objective, the deliverable you produce, the steps, and a check to confirm you are done.",
  "Tables shown in the steps can be built in a spreadsheet or on the worksheet provided.",
  "Where a lab uses an online tool, the tool URL is shown with the step.",
- "Keep every lab output — they combine into your final improvement package and are your revision material.",
+ "Keep every activity output — they combine into your final improvement package and are your revision material.",
 ])
 
-# ---------------- per-topic, per-lab ----------------
+# ---------------- per-topic, per-activity ----------------
 for t in C.TOPICS:
     label = t["phase"].title() if t["num"] else "Foundations"
     h1(f"{t['phase']} — {t['title']}  ({t['weighting']})")
@@ -111,7 +111,7 @@ for t in C.TOPICS:
     for a in [x for x in ACT if x["topic"]==t["num"]]:
         kind = "Elective" if a.get("elective") else "Core"
         title = a["title"].replace("Elective — ","")
-        h2(f"Lab {a['num']} — {title}  [{kind}]")
+        h2(f"Activity {a['num']} — {title}  [{kind}]")
         p(f"Objective: {a['objective']}")
         p(f"Goal: {a['desc']}")
         h3("What you'll build")
@@ -129,7 +129,7 @@ for t in C.TOPICS:
                  for t in pack.get("templates", [])] +
                 [f"Excel workbook: A{a['num']:02d}-Data-Workbook.xlsx — every dataset and "
                  f"template above, one per tab.",
-                 "Model answer: model-answer.md — read it AFTER you attempt the lab."])
+                 "Model answer: model-answer.md — read it AFTER you attempt the activity."])
         h3("Step-by-step")
         steps([(instr,cmd) for instr,cmd in a["steps"]])
         h3("Check your work")
@@ -173,8 +173,8 @@ h1("Preparing for the Assessment")
 bullets([
  C.ASSESSMENT["written"],
  C.ASSESSMENT["practical"],
- "Both papers are open book — you may use these slides, this Learner Guide and your lab outputs.",
- "Revise by re-reading your own lab outputs; they follow exactly the same scenario as the assessment.",
+ "Both papers are open book — you may use these slides, this Learner Guide and your activity outputs.",
+ "Revise by re-reading your own activity outputs; they follow exactly the same scenario as the assessment.",
  "Be ready to define quality, Lean, Six Sigma and Lean Six Sigma, and explain how they differ.",
  "Be ready to describe the belt roles and say where a White Belt contributes to an improvement team.",
  "Be ready to name the eight wastes (DOWNTIME) and give a workplace example of each.",
@@ -183,7 +183,7 @@ bullets([
  "Be ready to write a problem statement that describes the problem without naming a solution.",
  "Be ready to explain how the Fishbone diagram and 5 Whys are used together to find a root cause.",
  "Be ready to describe what a control plan must contain to hold an improvement in place.",
- "Re-work the labs from memory — being able to produce the tools unaided is the best preparation.",
+ "Re-work the activities from memory — being able to produce the tools unaided is the best preparation.",
  C.ASSESSMENT["note"],
 ])
 
@@ -275,23 +275,27 @@ prodoc.add_cover_page(doc,"LEARNER GUIDE",C.TITLE,C.VERSION.lstrip("v"),
 prodoc.add_version_control(doc,[
  ("1","1 July 2026","Initial release — CLSSWB Learner Guide for the one-day Lean Six Sigma awareness course.",C.TRAINER),
  ("2",C.VERSION_DATE,"Guide rebuilt from the single-source content module and restructured to follow the "
-  "DMAIC roadmap end to end, with exactly one hands-on lab per DMAIC phase (5 labs). All labs unified "
-  "under one continuous scenario (the BrewBean Cafe morning rush) so each lab output feeds the next. "
+  "DMAIC roadmap end to end, with exactly one hands-on activity per DMAIC phase (5 activities). All activities unified "
+  "under one continuous scenario (the BrewBean Cafe morning rush) so each activity output feeds the next. "
   "Content simplified to White Belt awareness depth: sigma-level and DPMO calculation, MSA, FMEA, value "
   "stream mapping, Kano analysis, weighted solution-selection matrices and SPC control limits removed "
   "and replaced with recognition-level explanations; quick-reference section changed from formulas to "
   "the DMAIC roadmap; glossary aligned to the tools actually taught.",C.TRAINER),
- ("3",C.VERSION_DATE,"Lab data pack added. Each of the five labs is now a self-contained folder "
+ ("3",C.VERSION_DATE,"Lab data pack added. Each of the five activities is now a self-contained folder "
   "carrying its mock dataset in CSV and Excel form, blank worksheet templates, a worked model answer "
-  "and facilitator notes. The datasets are internally consistent across the five labs — the Lab 2 "
-  "observation log is the evidence base for the Lab 3 Pareto, and the Lab 4 pilot results carry into "
-  "the Lab 5 monitoring data — so the BrewBean Cafe story reconciles end to end. Lab steps rewritten "
+  "and facilitator notes. The datasets are internally consistent across the five activities — the Activity 2 "
+  "observation log is the evidence base for the Activity 3 Pareto, and the Activity 4 pilot results carry into "
+  "the Activity 5 monitoring data — so the BrewBean Cafe story reconciles end to end. Lab steps rewritten "
   "to reference the specific data and template files the learner works from.",C.TRAINER),
  ("4",C.VERSION_DATE,"Labs restructured into the Tertiary Infotech house ACTIVITY format. "
   "labs/ is now activities/, with one folder per activity named 'NN - Title', each carrying the "
   "Facilitator Guide, Learner Worksheet and Checklist as DOCX and PDF alongside its data pack "
   "(CSV datasets, Excel workbook, blank templates and the model answer). Per-activity pointers "
   "updated to the new folder layout.",C.TRAINER),
+ ("5",C.VERSION_DATE,"Terminology aligned to the activity restructure: every learner-facing "
+  "'Lab N' reference now reads 'Activity N' across this guide and the slide deck, matching the "
+  "activities/ folder names and the Case Study citations. Lesson Plan schedule corrected so the "
+  "taught day is a true 8 instructional hours.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
