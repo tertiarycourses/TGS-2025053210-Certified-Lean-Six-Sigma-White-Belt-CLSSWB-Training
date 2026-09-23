@@ -7,7 +7,8 @@ lunch, tea within, final assessment Day 1 5:30pm). Topics/activities come from
 course_data + the domain data files so the LP stays aligned with the deck,
 guide and labs.
 """
-import os, sys
+import os
+import sys
 from docx import Document
 from docx.shared import Pt, RGBColor, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -50,7 +51,13 @@ def _scan_deck():
         from pptx import Presentation
         deck = os.path.join(REPO, "courseware", f"{C.SHORT_TITLE}-{C.VERSION}.pptx")
         prs = Presentation(deck)
-    except Exception:
+    except Exception as e:
+        # Never fail silently: without the deck every "[slides N-M]" reference is
+        # dropped from the schedule and the omission is invisible in the output.
+        print(f"  WARNING: could not read the deck for slide references ({e}).\n"
+              f"           Expected: {deck}\n"
+              f"           Build the slides FIRST, then rebuild the Lesson Plan.",
+              file=sys.stderr)
         return [], 0
     MARKERS = {"COURSE ADMINISTRATION": "Admin", "FOUNDATIONS": "Foundations",
                "DMAIC · DEFINE": "Define", "DMAIC · MEASURE": "Measure",
@@ -64,7 +71,8 @@ def _scan_deck():
             t = sh.text_frame.text.strip()
             if t in MARKERS:
                 marks.append((i, "section", MARKERS[t])); break
-            m = re.fullmatch(r"LAB (\d+)", t)
+            # the deck labels these ACTIVITY N; LAB N is the legacy label
+            m = re.fullmatch(r"(?:ACTIVITY|LAB) (\d+)", t)
             if m:
                 num = int(m.group(1))
                 if not any(k == "lab" and v == num for _, k, v in marks):
@@ -172,6 +180,10 @@ prodoc.add_version_control(doc,[
  ("5",C.VERSION_DATE,"Terminology aligned: 'Lab N' now reads 'Activity N' throughout, matching the "
   "activities/ folder names and the Case Study citations. Schedule footnote clarified to state "
   "that the 480-minute total counts scheduled time excluding the lunch break.",C.TRAINER),
+ ("6",C.VERSION_DATE,"Completed the activity rename: the remaining learner-facing 'lab' "
+  "wordings in the deck, this guide and the Lesson Plan now read 'activity'. Fixed the Lesson "
+  "Plan's slide-reference lookup, which stopped matching when the deck's activity markers were "
+  "renamed and had dropped the [slides N-M] references from the activity rows.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
@@ -183,7 +195,7 @@ info=[("Course Title",C.TITLE),("WSQ Course Reference",C.COURSE_CODE),
       ("Training Provider",C.ORG+"  ("+C.UEN.replace('UEN: ','UEN ')+")"),
       ("Duration","1 day · 8 training hours"),
       ("Daily Timing","9:30 am – 6:30 pm (1-hour lunch; tea breaks within training time)"),
-      ("Mode","Instructor-led, hands-on Lean Six Sigma labs using the BrewBean Cafe morning rush improvement scenario"),
+      ("Mode","Instructor-led, hands-on Lean Six Sigma activities using the BrewBean Cafe morning rush improvement scenario"),
       ("TSC Alignment",f"{C.TSC_TITLE} ({C.TSC_CODE})"),
       ("Trainer",C.TRAINER)]
 t=doc.add_table(rows=0,cols=2); t.style="Table Grid"

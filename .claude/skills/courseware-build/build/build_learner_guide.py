@@ -97,7 +97,7 @@ h3("Conventions used in every activity")
 bullets([
  "Each activity states its objective, the deliverable you produce, the steps, and a check to confirm you are done.",
  "Tables shown in the steps can be built in a spreadsheet or on the worksheet provided.",
- "Where a lab uses an online tool, the tool URL is shown with the step.",
+ "Where an activity uses an online tool, the tool URL is shown with the step.",
  "Keep every activity output — they combine into your final improvement package and are your revision material.",
 ])
 
@@ -294,8 +294,13 @@ prodoc.add_version_control(doc,[
   "updated to the new folder layout.",C.TRAINER),
  ("5",C.VERSION_DATE,"Terminology aligned to the activity restructure: every learner-facing "
   "'Lab N' reference now reads 'Activity N' across this guide and the slide deck, matching the "
-  "activities/ folder names and the Case Study citations. Lesson Plan schedule corrected so the "
-  "taught day is a true 8 instructional hours.",C.TRAINER),
+  "activities/ folder names and the Case Study citations. Lesson Plan total-time footnote "
+  "clarified to state its basis (480 minutes scheduled 9:30-18:30, excluding the 1-hour lunch "
+  "break); the schedule rows themselves are unchanged.",C.TRAINER),
+ ("6",C.VERSION_DATE,"Completed the activity rename: the remaining learner-facing 'lab' "
+  "wordings in the deck, this guide and the Lesson Plan now read 'activity'. Fixed the Lesson "
+  "Plan's slide-reference lookup, which stopped matching when the deck's activity markers were "
+  "renamed and had dropped the [slides N-M] references from the activity rows.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

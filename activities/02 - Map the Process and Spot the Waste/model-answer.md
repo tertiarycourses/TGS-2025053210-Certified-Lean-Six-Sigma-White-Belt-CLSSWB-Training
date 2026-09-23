@@ -2,7 +2,7 @@
 
 **Measure — Map the Process and Spot the Waste**
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6*
 
 > **Use this AFTER you have attempted the activity.** There is rarely one right answer in Lean Six Sigma — what matters is whether your reasoning is supported by the data. Compare your thinking with the model, not just your wording.
 
@@ -89,4 +89,4 @@ them down — the Case Study expects a baseline to be quoted, not invented.
 
 ---
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6 · © 2026 Tertiary Infotech Academy Pte Ltd*

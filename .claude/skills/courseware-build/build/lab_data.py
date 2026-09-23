@@ -316,7 +316,7 @@ LAB2 = dict(
             title="Process step timings",
             desc="The average observed time for each step of the morning-rush process, with the "
                  "team's value-add judgement left blank in the template. Use it for Step 3 and "
-                 "Step 4 of the lab.",
+                 "Step 4 of the activity.",
             headers=["Step No", "Process Step", "Who Does It", "Avg Time (sec)",
                      "Observed Range (sec)", "Times Step Was Skipped"],
             rows=[
@@ -481,7 +481,7 @@ LAB3 = dict(
             name="delay-reason-pareto-data",
             title="Delay reason Pareto data",
             desc="The Delay Reason column from the Activity 2 observation log, counted and ranked. "
-                 "This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner "
+                 "This is the 'supplied Pareto chart' the activity's Step 5 refers to — the learner "
                  "reads it rather than building it from scratch.",
             headers=["Delay Reason", "Count", "% of Delays", "Cumulative %"],
             rows=PARETO_ROWS,

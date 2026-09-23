@@ -73,7 +73,7 @@ def title_slug(t): return re.sub(r"[^A-Za-z0-9]+","-",t).strip("-")
 
 TOPIC_BY_NUM={t["num"]:t for t in C.TOPICS}
 TYPE_LABEL={"role_play":"Role Play","case_study":"Case Study"}
-DEFAULT_TYPE="Hands-on Lab"
+DEFAULT_TYPE="Hands-on Activity"
 
 def short_title(a):
     """Activity title without the leading "Phase — " prefix; the phase is already

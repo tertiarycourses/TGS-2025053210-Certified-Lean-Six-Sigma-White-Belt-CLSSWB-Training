@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Learner Guide
 
-**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v5 · 23 September 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v6 · 23 September 2026**
 
 ## Contents
 
@@ -90,7 +90,7 @@ Two browser-based tools are used during the activities. No installation or licen
 
 - Each activity states its objective, the deliverable you produce, the steps, and a check to confirm you are done.
 - Tables shown in the steps can be built in a spreadsheet or on the worksheet provided.
-- Where a lab uses an online tool, the tool URL is shown with the step.
+- Where an activity uses an online tool, the tool URL is shown with the step.
 - Keep every activity output — they combine into your final improvement package and are your revision material.
 
 
@@ -189,7 +189,7 @@ A SIPOC overview, a step-by-step process map with timings, and a completed waste
 This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Morning rush observation log (60 rows): 60 customers observed end to end during one weekday morning rush at BrewBean Cafe. Wait time is measured from the customer joining the queue to the drink being handed over. This is THE baseline dataset for the course — Activity 3's Pareto is derived from the Delay Reason column and Activity 5's control chart compares back to it.
-- DATA — Process step timings (15 rows): The average observed time for each step of the morning-rush process, with the team's value-add judgement left blank in the template. Use it for Step 3 and Step 4 of the lab.
+- DATA — Process step timings (15 rows): The average observed time for each step of the morning-rush process, with the team's value-add judgement left blank in the template. Use it for Step 3 and Step 4 of the activity.
 - DATA — DOWNTIME waste tally (partially completed) (8 rows): The team's waste walk, half done. Three rows are filled in as worked examples; the learner completes the rest in Step 6 from the observation log and the process timings.
 - TEMPLATE — SIPOC (blank): Step 2. Keep Process to 5-7 steps only.
 - TEMPLATE — Process map with value-add judgement (blank): Steps 3 and 4.
@@ -244,7 +244,7 @@ A completed 5 Whys chain, a Fishbone diagram with causes sorted by category, and
 
 This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
-- DATA — Delay reason Pareto data (6 rows): The Delay Reason column from the Activity 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner reads it rather than building it from scratch.
+- DATA — Delay reason Pareto data (6 rows): The Delay Reason column from the Activity 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the activity's Step 5 refers to — the learner reads it rather than building it from scratch.
 - DATA — Candidate causes and their evidence (12 rows): Every cause the team brainstormed, with whether any evidence actually supports it. Used in Step 7 to shortlist causes on evidence rather than opinion, and in Step 6 to judge common vs special cause.
 - TEMPLATE — 5 Whys chain (blank): Steps 1 and 2. Stop when you reach something the team can act on.
 - TEMPLATE — Fishbone (5M) diagram (blank): Steps 3 and 4. Problem goes in the head of the fish.

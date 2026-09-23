@@ -1,6 +1,6 @@
 # Activity 3 — Data Pack
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6*
 
 All figures below are **mock data** created for training. They describe the BrewBean Cafe morning rush scenario used by every activity in this course, and they are internally consistent across the five activities — the Activity 2 observation log is the evidence base for the Activity 3 Pareto, and the Activity 5 monitoring data follows on from the Activity 4 pilot.
 
@@ -18,7 +18,7 @@ All figures below are **mock data** created for training. They describe the Brew
 
 **File:** `delay-reason-pareto-data.csv`  |  **Rows:** 6
 
-The Delay Reason column from the Activity 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner reads it rather than building it from scratch.
+The Delay Reason column from the Activity 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the activity's Step 5 refers to — the learner reads it rather than building it from scratch.
 
 | Column | Description |
 |--------|-------------|

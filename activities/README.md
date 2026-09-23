@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Activities
 
-**WSQ Course Code:** TGS-2025053210  |  **Version v5 · 23 September 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Version v6 · 23 September 2026**
 
 5 hands-on activities — exactly one per phase of the **DMAIC roadmap**. Every activity runs on one continuous scenario, the **BrewBean Cafe morning rush**, and each activity's output becomes the next one's input, so by the end of the day your work forms a single complete improvement package.
 
@@ -21,11 +21,11 @@
 
 | # | DMAIC phase | Activity | Type | Duration | Data pack | Folder |
 |---|---|---|---|---|---|---|
-| 1 | DEFINE | Define — Customer Requirements and the Problem Statement | Hands-on Lab | 30 minutes | 1 dataset + 2 templates | `01 - Customer Requirements and the Problem Statement/` |
-| 2 | MEASURE | Measure — Map the Process and Spot the Waste | Hands-on Lab | 30 minutes | 3 datasets + 3 templates | `02 - Map the Process and Spot the Waste/` |
-| 3 | ANALYZE | Analyze — Find the Root Cause | Hands-on Lab | 30 minutes | 2 datasets + 3 templates | `03 - Find the Root Cause/` |
-| 4 | IMPROVE | Improve — Choose and Pilot a Countermeasure | Hands-on Lab | 30 minutes | 2 datasets + 3 templates | `04 - Choose and Pilot a Countermeasure/` |
-| 5 | CONTROL | Control — Hold the Gain and Hand Over | Hands-on Lab | 30 minutes | 2 datasets + 3 templates | `05 - Hold the Gain and Hand Over/` |
+| 1 | DEFINE | Define — Customer Requirements and the Problem Statement | Hands-on Activity | 30 minutes | 1 dataset + 2 templates | `01 - Customer Requirements and the Problem Statement/` |
+| 2 | MEASURE | Measure — Map the Process and Spot the Waste | Hands-on Activity | 30 minutes | 3 datasets + 3 templates | `02 - Map the Process and Spot the Waste/` |
+| 3 | ANALYZE | Analyze — Find the Root Cause | Hands-on Activity | 30 minutes | 2 datasets + 3 templates | `03 - Find the Root Cause/` |
+| 4 | IMPROVE | Improve — Choose and Pilot a Countermeasure | Hands-on Activity | 30 minutes | 2 datasets + 3 templates | `04 - Choose and Pilot a Countermeasure/` |
+| 5 | CONTROL | Control — Hold the Gain and Hand Over | Hands-on Activity | 30 minutes | 2 datasets + 3 templates | `05 - Hold the Gain and Hand Over/` |
 
 ## About the data
 
@@ -39,4 +39,4 @@ So the numbers you quote in one activity still hold in the next, and the whole B
 
 See [tools.md](tools.md) for the frameworks and free tools used across the activities.
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v5 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6 · © 2026 Tertiary Infotech Academy Pte Ltd*

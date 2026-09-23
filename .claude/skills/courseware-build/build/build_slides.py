@@ -103,13 +103,13 @@ lms = asset("lms_download.png")
 if lms:
     d.image_slide("Download Your Course Material", lms,
                   kicker="COURSE PORTAL · lms-tms.tertiaryinfotech.com",
-                  caption="Log in to lms-tms.tertiaryinfotech.com to download the slides, Learner Guide and lab files.")
+                  caption="Log in to lms-tms.tertiaryinfotech.com to download the slides, Learner Guide and activity files.")
 else:
     d.flow_h("Download Your Course Material", [
         "Go to lms-tms.tertiaryinfotech.com",
         "Sign in with the account details given in class",
         "Open this course from your dashboard",
-        "Download the slides, Learner Guide and lab files",
+        "Download the slides, Learner Guide and activity files",
         "Keep them open — the assessment is open book",
     ], kicker="COURSE PORTAL · lms-tms.tertiaryinfotech.com", color=TEAL)
 
@@ -170,7 +170,7 @@ d.tile_grid("Briefing for Assessment", [
 d.tile_grid("Assessment", [
     ("Written Assessment (WA)", C.ASSESSMENT["written"]),
     ("Case Study (CS)", C.ASSESSMENT["practical"]),
-    ("Open book", "Slides, Learner Guide, your lab outputs and approved materials only."),
+    ("Open book", "Slides, Learner Guide, your activity outputs and approved materials only."),
     ("Attendance", C.ASSESSMENT["note"]),
     ("Result", "Graded Competent (C) or Not Yet Competent (NYC) by the assessor."),
     ("Appeals", "An appeal process is available if you wish to contest a result."),
@@ -302,7 +302,7 @@ d.tile_grid("Final Readiness Checklist", [
 d.tile_grid("Continuing Your Lean Six Sigma Journey", [
     ("Apply it at work", "Spot and log the eight wastes in your own area within 30 days."),
     ("Yellow Belt", "The next step — supports DMAIC projects and the data analysis behind them."),
-    ("Keep the templates", "Your lab outputs are reusable templates for real improvement work."),
+    ("Keep the templates", "Your activity outputs are reusable templates for real improvement work."),
     ("Join the conversation", "Raise improvement ideas in your team; small changes spread by example."),
 ], kicker="NEXT STEPS", cols=2, size=15, accent=AMBER)
 
