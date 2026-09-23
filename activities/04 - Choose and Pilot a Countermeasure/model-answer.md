@@ -2,7 +2,7 @@
 
 **Improve — Choose and Pilot a Countermeasure**
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v7*
 
 > **Use this AFTER you have attempted the activity.** There is rarely one right answer in Lean Six Sigma — what matters is whether your reasoning is supported by the data. Compare your thinking with the model, not just your wording.
 
@@ -84,4 +84,4 @@ reaction plan — is a CONTROL. That is Activity 5.
 
 ---
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v7 · © 2026 Tertiary Infotech Academy Pte Ltd*

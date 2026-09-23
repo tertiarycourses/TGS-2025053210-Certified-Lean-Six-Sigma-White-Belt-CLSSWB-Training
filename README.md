@@ -14,7 +14,7 @@ This repository contains **5 guided Lean Six Sigma White Belt activities** — e
 
 | Artifact | File |
 |----------|------|
-| **Slide deck** | `courseware/Certified Lean Six Sigma White Belt (CLSSWB) Training-v6.pptx` (and `.pdf`) |
+| **Slide deck** | `courseware/Certified Lean Six Sigma White Belt (CLSSWB) Training-v7.pptx` (and `.pdf`) |
 | **Learner Guide (Markdown)** | [LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.md](LG-Certified%20Lean%20Six%20Sigma%20White%20Belt%20%28CLSSWB%29%20Training.md) |
 | **Learner Guide (DOCX/PDF)** | `courseware/LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
 | **Lesson Plan (DOCX/PDF)** | `courseware/LP-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
@@ -102,4 +102,4 @@ All artifacts are generated from `course_data.py` + `data_domainN.py` + `lab_dat
 
 ---
 
-*Version v6 · 23 September 2026 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Version v7 · 23 September 2026 · © 2026 Tertiary Infotech Academy Pte Ltd*

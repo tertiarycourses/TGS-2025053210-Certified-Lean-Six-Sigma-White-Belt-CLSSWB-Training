@@ -301,6 +301,8 @@ prodoc.add_version_control(doc,[
   "wordings in the deck, this guide and the Lesson Plan now read 'activity'. Fixed the Lesson "
   "Plan's slide-reference lookup, which stopped matching when the deck's activity markers were "
   "renamed and had dropped the [slides N-M] references from the activity rows.",C.TRAINER),
+ ("7",C.VERSION_DATE,"Activity step slides now carry the DMAIC phase in the eyebrow "
+  "(ACTIVITY N - PHASE) instead of a character-truncated activity title.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

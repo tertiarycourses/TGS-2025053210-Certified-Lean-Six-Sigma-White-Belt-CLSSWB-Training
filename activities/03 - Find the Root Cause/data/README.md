@@ -1,6 +1,6 @@
 # Activity 3 — Data Pack
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v7*
 
 All figures below are **mock data** created for training. They describe the BrewBean Cafe morning rush scenario used by every activity in this course, and they are internally consistent across the five activities — the Activity 2 observation log is the evidence base for the Activity 3 Pareto, and the Activity 5 monitoring data follows on from the Activity 4 pilot.
 

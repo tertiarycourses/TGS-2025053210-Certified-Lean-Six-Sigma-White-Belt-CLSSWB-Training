@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Learner Guide
 
-**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v6 · 23 September 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v7 · 23 September 2026**
 
 ## Contents
 

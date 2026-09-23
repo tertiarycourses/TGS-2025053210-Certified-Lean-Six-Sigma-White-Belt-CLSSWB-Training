@@ -36,7 +36,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH as AL, WD_BREAK
 # ----------------------------------------------------------------- config
 TITLE = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 COURSE_CODE = "TGS-2025053210"
-VERSION = "v6"
+VERSION = "v7"
 WA_MINUTES = "30 minutes"
 CS_MINUTES = "30 minutes"
 

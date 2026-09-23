@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Activities
 
-**WSQ Course Code:** TGS-2025053210  |  **Version v6 · 23 September 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Version v7 · 23 September 2026**
 
 5 hands-on activities — exactly one per phase of the **DMAIC roadmap**. Every activity runs on one continuous scenario, the **BrewBean Cafe morning rush**, and each activity's output becomes the next one's input, so by the end of the day your work forms a single complete improvement package.
 
@@ -39,4 +39,4 @@ So the numbers you quote in one activity still hold in the next, and the whole B
 
 See [tools.md](tools.md) for the frameworks and free tools used across the activities.
 
-*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v6 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Certified Lean Six Sigma White Belt (CLSSWB) Training · TGS-2025053210 · Version v7 · © 2026 Tertiary Infotech Academy Pte Ltd*

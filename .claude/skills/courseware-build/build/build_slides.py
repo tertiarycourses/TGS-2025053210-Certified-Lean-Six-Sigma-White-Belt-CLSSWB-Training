@@ -224,7 +224,9 @@ def render_labs(acts, phase_label):
                         cols=2, size=13)
         steps = a["steps"]
         total = len(steps)
-        short = a["title"][:38]
+        # Eyebrow: the DMAIC phase, not a character-truncated title — the full
+        # title already sits in the H1 directly beneath it.
+        short = phase_label.replace("DMAIC · ", "")
         # Awareness-level course: two steps per slide keeps the one-day deck tight
         # while every step stays on screen for the learner.
         numbered = [(i, instr) for i, (instr, _cmd) in enumerate(steps, 1)]
