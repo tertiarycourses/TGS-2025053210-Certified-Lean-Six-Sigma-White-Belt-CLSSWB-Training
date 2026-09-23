@@ -29,7 +29,8 @@ def _find_repo(start):
     d=start
     for _ in range(8):
         d=os.path.dirname(d)
-        if os.path.isdir(os.path.join(d,"courseware")) and os.path.isdir(os.path.join(d,"labs")): return d
+        if os.path.isdir(os.path.join(d,"courseware")) and \
+           (os.path.isdir(os.path.join(d,"activities")) or os.path.isdir(os.path.join(d,"labs"))): return d
     return os.path.dirname(os.path.dirname(HERE))
 REPO=_find_repo(HERE); ASSETS=os.path.join(os.path.dirname(HERE),"assets")
 
@@ -118,23 +119,24 @@ for t in C.TOPICS:
         pack = LAB_DATA.get(a["num"])
         if pack:
             h3("Your data pack")
-            p("This lab ships with its own mock data for the BrewBean Cafe scenario. Everything "
-              "below is in the lab folder, as CSV files and as one Excel workbook with a tab per "
-              "sheet.")
+            p("This activity ships with its own mock data for the BrewBean Cafe scenario. Everything "
+              "below is in the activity folder, as CSV files and as one Excel workbook with a tab "
+              "per sheet.")
             bullets(
                 [f"DATA — {d['title']} ({len(d['rows'])} rows): {d['desc']}"
                  for d in pack.get("datasets", [])] +
                 [f"TEMPLATE — {t['title']}: {t['desc']}"
                  for t in pack.get("templates", [])] +
-                [f"Excel workbook: lab-{a['num']:02d}-workbook.xlsx — every dataset and template "
-                 f"above, one per tab.",
+                [f"Excel workbook: A{a['num']:02d}-Data-Workbook.xlsx — every dataset and "
+                 f"template above, one per tab.",
                  "Model answer: model-answer.md — read it AFTER you attempt the lab."])
         h3("Step-by-step")
         steps([(instr,cmd) for instr,cmd in a["steps"]])
         h3("Check your work")
         p(a["test"])
-        note(f"The full worksheet, the data, the blank templates and the model answer for this "
-             f"lab are in the labs/lab-{a['num']:02d}-*/ folder.")
+        note(f"The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank "
+             f"templates and the model answer for this activity are in the "
+             f"activities/{a['num']:02d} - */ folder.")
         rule()
 
 h1("Quick Reference — The DMAIC Roadmap")
@@ -285,6 +287,11 @@ prodoc.add_version_control(doc,[
   "observation log is the evidence base for the Lab 3 Pareto, and the Lab 4 pilot results carry into "
   "the Lab 5 monitoring data — so the BrewBean Cafe story reconciles end to end. Lab steps rewritten "
   "to reference the specific data and template files the learner works from.",C.TRAINER),
+ ("4",C.VERSION_DATE,"Labs restructured into the Tertiary Infotech house ACTIVITY format. "
+  "labs/ is now activities/, with one folder per activity named 'NN - Title', each carrying the "
+  "Facilitator Guide, Learner Worksheet and Checklist as DOCX and PDF alongside its data pack "
+  "(CSV datasets, Excel workbook, blank templates and the model answer). Per-activity pointers "
+  "updated to the new folder layout.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

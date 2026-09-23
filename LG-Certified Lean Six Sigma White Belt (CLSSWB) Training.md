@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Learner Guide
 
-**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3 · 23 September 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v4 · 23 September 2026**
 
 ## Contents
 
@@ -134,12 +134,12 @@ A VOC-to-CTQ table, a written problem statement, a SMART goal and a simple scope
 
 **Your data pack**
 
-This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Raw Voice of the Customer feedback (30 rows): Thirty pieces of unedited customer feedback collected by the BrewBean Cafe improvement team over two weeks — online reviews, comment cards and remarks made at the counter. This is the raw material for Step 2 and Step 3: the learner reads it, extracts VOC statements and turns them into measurable CTQs.
 - TEMPLATE — VOC-to-CTQ table (blank): Step 2 and Step 3. One row per VOC statement.
 - TEMPLATE — Problem statement, SMART goal and scope (blank): Steps 4, 5 and 6.
-- Excel workbook: lab-01-workbook.xlsx — every dataset and template above, one per tab.
+- Excel workbook: A01-Data-Workbook.xlsx — every dataset and template above, one per tab.
 - Model answer: model-answer.md — read it AFTER you attempt the lab.
 
 **Step-by-step**
@@ -155,7 +155,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 
 Every CTQ has a number and a unit, your problem statement contains no solution, and your goal has a metric, a baseline, a target and a date.
 
-> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-01-*/ folder.
+> **Note:** The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank templates and the model answer for this activity are in the activities/01 - */ folder.
 
 ---
 
@@ -186,7 +186,7 @@ A SIPOC overview, a step-by-step process map with timings, and a completed waste
 
 **Your data pack**
 
-This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Morning rush observation log (60 rows): 60 customers observed end to end during one weekday morning rush at BrewBean Cafe. Wait time is measured from the customer joining the queue to the drink being handed over. This is THE baseline dataset for the course — Lab 3's Pareto is derived from the Delay Reason column and Lab 5's control chart compares back to it.
 - DATA — Process step timings (15 rows): The average observed time for each step of the morning-rush process, with the team's value-add judgement left blank in the template. Use it for Step 3 and Step 4 of the lab.
@@ -194,7 +194,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 - TEMPLATE — SIPOC (blank): Step 2. Keep Process to 5-7 steps only.
 - TEMPLATE — Process map with value-add judgement (blank): Steps 3 and 4.
 - TEMPLATE — DOWNTIME tally sheet (blank): Step 6.
-- Excel workbook: lab-02-workbook.xlsx — every dataset and template above, one per tab.
+- Excel workbook: A02-Data-Workbook.xlsx — every dataset and template above, one per tab.
 - Model answer: model-answer.md — read it AFTER you attempt the lab.
 
 **Step-by-step**
@@ -211,7 +211,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 
 Your SIPOC has all five columns filled, every process step has a time, and every waste on your tally sheet is tagged to one of the eight DOWNTIME types.
 
-> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-02-*/ folder.
+> **Note:** The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank templates and the model answer for this activity are in the activities/02 - */ folder.
 
 ---
 
@@ -242,14 +242,14 @@ A completed 5 Whys chain, a Fishbone diagram with causes sorted by category, and
 
 **Your data pack**
 
-This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Delay reason Pareto data (6 rows): The Delay Reason column from the Lab 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner reads it rather than building it from scratch.
 - DATA — Candidate causes and their evidence (12 rows): Every cause the team brainstormed, with whether any evidence actually supports it. Used in Step 7 to shortlist causes on evidence rather than opinion, and in Step 6 to judge common vs special cause.
 - TEMPLATE — 5 Whys chain (blank): Steps 1 and 2. Stop when you reach something the team can act on.
 - TEMPLATE — Fishbone (5M) diagram (blank): Steps 3 and 4. Problem goes in the head of the fish.
 - TEMPLATE — Root cause shortlist (blank): Steps 6 and 7.
-- Excel workbook: lab-03-workbook.xlsx — every dataset and template above, one per tab.
+- Excel workbook: A03-Data-Workbook.xlsx — every dataset and template above, one per tab.
 - Model answer: model-answer.md — read it AFTER you attempt the lab.
 
 **Step-by-step**
@@ -266,7 +266,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 
 Your 5 Whys chain ends in something the team can actually act on, every Fishbone cause sits under one of the five categories, and each shortlisted cause is backed by an observation, not an opinion.
 
-> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-03-*/ folder.
+> **Note:** The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank templates and the model answer for this activity are in the activities/03 - */ folder.
 
 ---
 
@@ -297,14 +297,14 @@ A brainstormed countermeasure list, an impact/effort grid, one selected counterm
 
 **Your data pack**
 
-This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Countermeasure options with impact, effort and cost (12 rows): Twelve candidate countermeasures the team generated against the shortlisted root causes, scored for impact and effort. Used in Step 5 to plot the impact/effort grid and choose one.
 - DATA — Pilot week results (6 rows): What actually happened when the chosen countermeasure was piloted for one week. The same 60-customer observation was repeated each day. Used in Step 7 to judge whether the pilot worked, and carried into Lab 5 as the new baseline.
 - TEMPLATE — Countermeasure brainstorm (blank): Steps 1 and 2. At least six ideas, no judging yet.
 - TEMPLATE — Impact/effort grid (blank): Step 5. Score each idea, then place it in a quadrant.
 - TEMPLATE — Standard work and pilot plan (blank): Steps 6 and 7.
-- Excel workbook: lab-04-workbook.xlsx — every dataset and template above, one per tab.
+- Excel workbook: A04-Data-Workbook.xlsx — every dataset and template above, one per tab.
 - Model answer: model-answer.md — read it AFTER you attempt the lab.
 
 **Step-by-step**
@@ -321,7 +321,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 
 Your selected countermeasure clearly addresses the root cause from Lab 3 (not the symptom), and your pilot plan names a measure, an owner and a review date.
 
-> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-04-*/ folder.
+> **Note:** The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank templates and the model answer for this activity are in the activities/04 - */ folder.
 
 ---
 
@@ -352,14 +352,14 @@ A completed control plan, a visual management board sketch, and a one-page summa
 
 **Your data pack**
 
-This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+This activity ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the activity folder, as CSV files and as one Excel workbook with a tab per sheet.
 
 - DATA — Post-improvement monitoring — four weeks (20 rows): Four weeks of daily average wait times after the pilot was made permanent. The learner uses this in Steps 1-3 to choose the control measure, set the target and write a reaction plan that would have caught the drift.
 - DATA — Control plan — worked example (one row completed) (4 rows): The control plan format with a single worked row, so the learner can see the level of specificity expected before completing their own in Step 2.
 - TEMPLATE — Control plan (blank): Steps 1, 2 and 3.
 - TEMPLATE — SOP and daily huddle plan (blank): Steps 5 and 6.
 - TEMPLATE — One-page DMAIC summary (blank): Step 7. The whole project on one page.
-- Excel workbook: lab-05-workbook.xlsx — every dataset and template above, one per tab.
+- Excel workbook: A05-Data-Workbook.xlsx — every dataset and template above, one per tab.
 - Model answer: model-answer.md — read it AFTER you attempt the lab.
 
 **Step-by-step**
@@ -376,7 +376,7 @@ This lab ships with its own mock data for the BrewBean Cafe scenario. Everything
 
 Your control plan names a measure, a target, a frequency and an owner; your reaction plan says what to DO when it slips; and your one-page summary tells the complete DMAIC story from problem to handover.
 
-> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-05-*/ folder.
+> **Note:** The Learner Worksheet, the Facilitator Guide, the Checklist, the data, the blank templates and the model answer for this activity are in the activities/05 - */ folder.
 
 ---
 

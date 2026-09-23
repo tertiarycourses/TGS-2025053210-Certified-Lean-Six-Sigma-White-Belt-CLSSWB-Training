@@ -115,11 +115,11 @@ def build_workbook(lab_num, lab_title, pack, out_path):
     wb.remove(wb.active)
 
     cover = wb.create_sheet("About this workbook")
-    cover["A1"] = f"Lab {lab_num} — {lab_title}"
+    cover["A1"] = f"Activity {lab_num} — {lab_title}"
     cover["A1"].font = Font(bold=True, size=15, color="1F4E79", name="Arial")
     cover["A2"] = f"{C.TITLE}  ·  {C.COURSE_CODE}  ·  Version {C.VERSION}"
     cover["A2"].font = NOTE_FONT
-    cover["A4"] = ("Scenario: BrewBean Cafe morning rush. Every lab in this course uses the same "
+    cover["A4"] = ("Scenario: BrewBean Cafe morning rush. Every activity in this course uses the same "
                    "scenario, so your outputs build into one improvement package.")
     cover["A4"].font = BODY_FONT
 
@@ -157,15 +157,15 @@ def build_workbook(lab_num, lab_title, pack, out_path):
 def data_readme(lab_num, lab_title, pack):
     """The data dictionary — what each file is, what each column means."""
     o = []
-    o.append(f"# Lab {lab_num} — Data Pack")
+    o.append(f"# Activity {lab_num} — Data Pack")
     o.append("")
     o.append(f"*{C.TITLE} · {C.COURSE_CODE} · Version {C.VERSION}*")
     o.append("")
     o.append("All figures below are **mock data** created for training. They describe the "
-             "BrewBean Cafe morning rush scenario used by every lab in this course, and they are "
-             "internally consistent across the five labs — the Lab 2 observation log is the "
-             "evidence base for the Lab 3 Pareto, and the Lab 5 monitoring data follows on from "
-             "the Lab 4 pilot.")
+             "BrewBean Cafe morning rush scenario used by every activity in this course, and they "
+             "are internally consistent across the five activities — the Activity 2 observation "
+             "log is the evidence base for the Activity 3 Pareto, and the Activity 5 monitoring "
+             "data follows on from the Activity 4 pilot.")
     o.append("")
     o.append("## Files in this folder")
     o.append("")
@@ -173,7 +173,7 @@ def data_readme(lab_num, lab_title, pack):
     o.append("|------|--------|------------|")
     for d in pack.get("datasets", []):
         o.append(f"| `{d['name']}.csv` | CSV | {d['title']} |")
-    o.append(f"| `lab-{lab_num:02d}-workbook.xlsx` | Excel | Every dataset **and** every blank "
+    o.append(f"| `A{lab_num:02d}-Data-Workbook.xlsx` | Excel | Every dataset **and** every blank "
              f"template above, one per tab |")
     o.append("")
     o.append("> Open the `.xlsx` if you want everything in one place with the templates ready to "
@@ -204,13 +204,13 @@ def data_readme(lab_num, lab_title, pack):
 
 def model_md(lab_num, lab_title, pack):
     o = []
-    o.append(f"# Lab {lab_num} — Model Answer")
+    o.append(f"# Activity {lab_num} — Model Answer")
     o.append("")
     o.append(f"**{lab_title}**")
     o.append("")
     o.append(f"*{C.TITLE} · {C.COURSE_CODE} · Version {C.VERSION}*")
     o.append("")
-    o.append("> **Use this AFTER you have attempted the lab.** There is rarely one right answer "
+    o.append("> **Use this AFTER you have attempted the activity.** There is rarely one right answer "
              "in Lean Six Sigma — what matters is whether your reasoning is supported by the "
              "data. Compare your thinking with the model, not just your wording.")
     o.append("")
@@ -232,7 +232,7 @@ def model_md(lab_num, lab_title, pack):
 def facilitator_md(lab_num, lab_title, pack):
     f = pack.get("facilitator", {})
     o = []
-    o.append(f"# Lab {lab_num} — Facilitator Notes")
+    o.append(f"# Activity {lab_num} — Facilitator Notes")
     o.append("")
     o.append(f"**{lab_title}**")
     o.append("")
@@ -284,15 +284,16 @@ def build_pack(lab_num, lab_title, folder):
     for t in pack.get("templates", []):
         write_csv(os.path.join(tpl_dir, t["name"] + ".csv"), t["headers"], t["rows"])
 
-    xlsx_name = f"lab-{lab_num:02d}-workbook.xlsx"
+    xlsx_name = f"A{lab_num:02d}-Data-Workbook.xlsx"
     build_workbook(lab_num, lab_title, pack, os.path.join(data_dir, xlsx_name))
 
     with open(os.path.join(data_dir, "README.md"), "w") as f:
         f.write(data_readme(lab_num, lab_title, pack))
     with open(os.path.join(folder, "model-answer.md"), "w") as f:
         f.write(model_md(lab_num, lab_title, pack))
-    with open(os.path.join(folder, "facilitator-notes.md"), "w") as f:
-        f.write(facilitator_md(lab_num, lab_title, pack))
+    # NOTE: the facilitator-facing notes are published as the house
+    # ANN-Facilitator-Guide-*.docx/.pdf by build_activities.py, so no separate
+    # facilitator-notes.md is written here (it would duplicate that sheet).
 
     return dict(
         datasets=[d["name"] for d in pack.get("datasets", [])],

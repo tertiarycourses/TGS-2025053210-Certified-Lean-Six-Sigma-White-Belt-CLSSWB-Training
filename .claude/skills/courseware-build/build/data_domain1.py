@@ -36,6 +36,24 @@ DOMAIN1 = [
             ("Check your problem statement against the SMART test and rewrite the goal so it is Specific, Measurable, Achievable, Relevant and Time-bound.", ""),
             ("Fill the in-scope / out-of-scope rows at the bottom of the same template so the team knows where the project stops.", ""),
         ],
+        duration='30 minutes',
+        case_scenario=[
+            'BrewBean Cafe is a busy coffee shop in the CBD serving mainly office workers on their way to work. Over the past two months online complaints about slow service have been rising, and several regulars have said they now buy their coffee elsewhere. Management has formed a small improvement team and you have joined it as the White Belt member, supporting the team rather than leading the project.',
+            'Nobody in the cafe agrees on what the problem actually is. The owner thinks the team needs a second coffee machine. The morning barista says the queue is fine and customers are simply impatient. One of the baristas is convinced the real issue is that orders keep coming out wrong. No one has asked the customers, and no one has written the problem down.',
+            'Before the team spends a dollar, your job is to find out what customers actually want, turn that into something measurable, and state the problem clearly enough that everyone in the room agrees on it.',
+        ],
+        discussion_prompts=[
+            'Reading the raw feedback, what are customers actually asking for — and how does that differ from what the owner assumed the problem was?',
+            'Which of your CTQ requirements would be the hardest to measure in a real cafe, and how would you measure it anyway?',
+            'What makes a problem statement useful to an improvement team, and what makes one useless?',
+            'Why does a White Belt project need an explicit out-of-scope list?',
+        ],
+        reflection_points=[
+            'Did your problem statement contain a hidden solution on the first attempt? Most do.',
+            'Which piece of customer feedback surprised you most compared with what you expected to find?',
+            'If the owner insists on buying the second coffee machine anyway, what would you say using only your VOC and CTQ table?',
+        ],
+        debrief_check="Every group can show five VOC statements in the customer's own words, five CTQs each carrying a number and a unit, and a problem statement containing no solution.",
         test="Every CTQ has a number and a unit, your problem statement contains no solution, and your goal has a metric, a baseline, a target and a date.",
     ),
 ]

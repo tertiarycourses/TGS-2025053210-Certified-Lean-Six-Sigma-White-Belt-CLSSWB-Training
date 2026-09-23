@@ -26,6 +26,24 @@ DOMAIN3 = [
             ("Using the last column of data/cause-evidence-sheet.csv, decide for each cause whether it is common cause (built into the process) or special cause (a one-off event).", ""),
             ("In templates/root-cause-shortlist-template.csv, shortlist the two or three causes best supported by evidence — not by opinion.", ""),
         ],
+        duration='30 minutes',
+        case_scenario=[
+            'The team now knows WHERE the delay happens. This activity asks WHY it happens.',
+            'At the last team meeting two theories were argued loudly. The owner still wants to buy a second machine. The shift supervisor wants to add a staff member to the morning rota. Both are solutions to a symptom nobody has yet explained: the queue is long, so add capacity. Neither theory has been tested against the observation data.',
+            'Most improvement teams jump straight from a symptom to a solution and end up fixing the wrong thing at considerable cost. Your job is to drill past the symptom to a cause the team can actually act on — and to be able to show the evidence for it.',
+        ],
+        discussion_prompts=[
+            "Compare your 5 Whys chain with another group's. You started from the same symptom — did you reach the same root cause, and what does that tell you?",
+            'Which causes on your Fishbone have real evidence behind them, and which are assumptions the team simply believes?',
+            'The Pareto ranks causes by frequency. When might the most frequent cause NOT be the most important one?',
+            'Why does it matter whether a cause is common cause or special cause?',
+        ],
+        reflection_points=[
+            "Did your chain stop at a person at any point? What happened when you asked 'why' again?",
+            "Which of the owner's or supervisor's two theories survives contact with the data?",
+            'What would it have cost the cafe to act on the loudest opinion instead of the evidence?',
+        ],
+        debrief_check='Every group can show a 5 Whys chain ending in an actionable process cause, a Fishbone with causes sorted into the five categories, and two or three shortlisted causes each backed by a stated observation.',
         test="Your 5 Whys chain ends in something the team can actually act on, every Fishbone cause sits under one of the five categories, and each shortlisted cause is backed by an observation, not an opinion.",
     ),
 ]

@@ -37,7 +37,8 @@ def _find_repo(start):
     d = start
     for _ in range(8):
         d = os.path.dirname(d)
-        if os.path.isdir(os.path.join(d, "courseware")) and os.path.isdir(os.path.join(d, "labs")):
+        if os.path.isdir(os.path.join(d, "courseware")) and \
+           (os.path.isdir(os.path.join(d, "activities")) or os.path.isdir(os.path.join(d, "labs"))):
             return d
     return os.path.dirname(os.path.dirname(HERE))
 
@@ -216,7 +217,7 @@ def render_labs(acts, phase_label):
             if ntp:
                 tiles.append((f"{ntp} blank templates",
                               "Worksheets to fill in — one per step group"))
-            tiles.append((f"lab-{a['num']:02d}-workbook.xlsx",
+            tiles.append((f"A{a['num']:02d}-Data-Workbook.xlsx",
                           "Every dataset and template, one per tab"))
             d.tile_grid(f"Your Data Pack — Lab {a['num']}", tiles,
                         kicker=f"LAB {a['num']} · WHAT YOU HAVE BEEN GIVEN",

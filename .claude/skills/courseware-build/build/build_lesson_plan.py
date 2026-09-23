@@ -28,7 +28,8 @@ def _find_repo(start):
     d=start
     for _ in range(8):
         d=os.path.dirname(d)
-        if os.path.isdir(os.path.join(d,"courseware")) and os.path.isdir(os.path.join(d,"labs")): return d
+        if os.path.isdir(os.path.join(d,"courseware")) and \
+           (os.path.isdir(os.path.join(d,"activities")) or os.path.isdir(os.path.join(d,"labs"))): return d
     return os.path.dirname(os.path.dirname(HERE))
 REPO=_find_repo(HERE); ASSETS=os.path.join(os.path.dirname(HERE),"assets")
 
@@ -36,7 +37,7 @@ BRAND=RGBColor(0x1F,0x6F,0xEB); DARK=RGBColor(0x11,0x18,0x27); GREY=RGBColor(0x5
 HEADER_FILL="1F6FEB"; TOPIC_FILL="E8F0FE"; BREAK_FILL="FFF4E5"; LUNCH_FILL="FDE9D9"; ASSESS_FILL="E8F7EE"
 
 def lab_titles(nums):
-    return "; ".join(f"Lab {a['num']}: {a['title']}" for a in ACT if a['num'] in nums)
+    return "; ".join(f"Activity {a['num']}: {a['title']}" for a in ACT if a['num'] in nums)
 
 # ------------------------------------------------ slide ranges (read from the built deck)
 def _scan_deck():
@@ -129,13 +130,13 @@ SCHEDULE = {
     ("10:00","11:00",60,"topic","FOUNDATIONS — What is Quality; What is Lean; What is Six Sigma; Lean vs Six Sigma vs Lean Six Sigma; the belt roles and where a White Belt contributes; the DMAIC roadmap"+sl("Foundations")),
     ("11:00","11:15",15,"break","Tea break"),
     ("11:15","12:00",45,"topic","DMAIC · DEFINE — Voice of the Customer; VOC to CTQ translation; problem statements; SMART goals; the project charter and scope"+sl("Define")),
-    ("12:00","12:30",30,"lab","Hands-on: "+lab_titles([1])+sll([1])),
+    ("12:00","12:30",30,"lab","Hands-on Activity: "+lab_titles([1])+sll([1])),
     ("12:30","13:30",60,"lunch","Lunch break"),
     ("13:30","14:15",45,"topic","DMAIC · MEASURE — process mapping; SIPOC; types of data; data collection plans; check sheets; the eight wastes (DOWNTIME); value-added analysis"+sl("Measure")),
-    ("14:15","14:45",30,"lab","Hands-on: "+lab_titles([2])+sll([2])),
+    ("14:15","14:45",30,"lab","Hands-on Activity: "+lab_titles([2])+sll([2])),
     ("14:45","15:30",45,"topic","DMAIC · ANALYZE — symptom vs root cause; 5 Whys; Fishbone (5M); reading a Pareto chart; common vs special cause variation"+sl("Analyze")),
     ("15:30","15:45",15,"break","Tea break"),
-    ("15:45","16:15",30,"lab","Hands-on: "+lab_titles([3])+" using the 5 Whys and Fishbone tools"+sll([3])),
+    ("15:45","16:15",30,"lab","Hands-on Activity: "+lab_titles([3])+" using the 5 Whys and Fishbone tools"+sll([3])),
     ("16:15","16:35",20,"topic","DMAIC · IMPROVE — generating solutions; impact/effort screening; 5S; mistake proofing (Poka-Yoke); standard work; piloting"+sl("Improve")+". Hands-on: "+lab_titles([4])+sll([4])),
     ("16:35","16:55",20,"topic","DMAIC · CONTROL — the control plan; visual management; SOPs; team huddles; handover"+sl("Control")+". Hands-on: "+lab_titles([5])+sll([5])),
     ("16:55","17:30",35,"assess","Course recap, revision and Briefing for Assessment"+sl("Wrap-up")),
@@ -164,6 +165,10 @@ prodoc.add_version_control(doc,[
   "dataset (CSV + Excel), blank templates, a worked model answer and facilitator notes. The Lab "
   "Reference table now shows the data pack issued for each lab, and the lab steps reference the "
   "specific data and template files the learner works from.",C.TRAINER),
+ ("4",C.VERSION_DATE,"Labs restructured into the house ACTIVITY format: activities/ replaces "
+  "labs/, one folder per activity named 'NN - Title', each holding the Facilitator Guide, Learner "
+  "Worksheet and Checklist as DOCX and PDF plus its data pack. Lab Reference table relabelled to "
+  "Activity Reference.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
@@ -225,10 +230,10 @@ for day,(theme,rows) in SCHEDULE.items():
     p=doc.add_paragraph(); r=p.add_run(f"Total training time: {training} minutes ({training//60} hours)."); r.italic=True; r.font.size=Pt(9.5); r.font.color.rgb=GREY
     assert training==480, f"Day {day} training minutes = {training}, expected 480"
 
-H("Lab Reference (aligned to the DMAIC phases)",1)
+H("Activity Reference (aligned to the DMAIC phases)",1)
 tt=doc.add_table(rows=0,cols=4); tt.style="Table Grid"
 hdr=tt.add_row().cells
-for i,htext in enumerate(["DMAIC phase / Topic","Weighting","Labs","Data pack issued to learners"]):
+for i,htext in enumerate(["DMAIC phase / Topic","Weighting","Activities","Data pack issued to learners"]):
     set_cell(hdr[i],htext,bold=True,size=10,color=RGBColor(0xFF,0xFF,0xFF),fill=HEADER_FILL)
 for tp in C.TOPICS:
     acts=[a for a in ACT if a["topic"]==tp["num"]]
@@ -236,7 +241,7 @@ for tp in C.TOPICS:
     set_cell(cells[0],f"{tp['phase']}: {tp['title']}",bold=True,size=9.5,fill=TOPIC_FILL)
     set_cell(cells[1],tp["weighting"],size=9.5,fill=TOPIC_FILL)
     set_cell(cells[2],", ".join(
-        f"Lab {a['num']}" + (" (elective)" if a.get("elective") else "") for a in acts),size=9.5)
+        f"Activity {a['num']}" + (" (elective)" if a.get("elective") else "") for a in acts),size=9.5)
     packs=[]
     for a in acts:
         pk=LAB_DATA.get(a["num"])
@@ -248,10 +253,10 @@ for row in tt.rows:
     row.cells[0].width=Inches(1.55); row.cells[1].width=Inches(0.7)
     row.cells[2].width=Inches(1.05); row.cells[3].width=Inches(3.5)
 pp=doc.add_paragraph()
-rr=pp.add_run("Every lab is a self-contained folder holding the worksheet, its mock data (CSV and "
-              "Excel), blank templates, a worked model answer and facilitator notes. The datasets "
-              "are internally consistent across the five labs, so the BrewBean Cafe story "
-              "reconciles from Define through to Control.")
+rr=pp.add_run("Every activity is a self-contained folder holding the Facilitator Guide, Learner "
+              "Worksheet and Checklist (DOCX + PDF), its mock data (CSV and Excel), blank "
+              "templates and a worked model answer. The datasets are internally consistent across "
+              "the five activities, so the BrewBean Cafe story reconciles from Define to Control.")
 rr.italic=True; rr.font.size=Pt(9.5); rr.font.color.rgb=GREY
 
 prodoc.add_page_numbers(doc)

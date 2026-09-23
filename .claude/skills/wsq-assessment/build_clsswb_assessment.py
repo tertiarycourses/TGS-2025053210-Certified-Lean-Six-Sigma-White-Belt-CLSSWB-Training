@@ -36,7 +36,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH as AL, WD_BREAK
 # ----------------------------------------------------------------- config
 TITLE = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 COURSE_CODE = "TGS-2025053210"
-VERSION = "v3"
+VERSION = "v4"
 WA_MINUTES = "30 minutes"
 CS_MINUTES = "30 minutes"
 
@@ -208,7 +208,7 @@ CASE = [
     dict(
         num=1,
         codes="A1, A2",
-        labs="Lab 1",
+        labs="Activity 1",
         question=(
             "Based on the information provided and using the DMAIC framework, outline THREE things the "
             "improvement team should establish in the DEFINE phase to scope this problem properly. "
@@ -217,7 +217,7 @@ CASE = [
         ),
         lines=14,
         answer=[
-            "Any THREE of the following, each with its purpose (Lab 1 — Define: Customer Requirements "
+            "Any THREE of the following, each with its purpose (Activity 1 — Define: Customer Requirements "
             "and the Problem Statement, worked against voc-raw-customer-feedback.csv; "
             "Slides: DMAIC · Define):",
             "• VOICE OF THE CUSTOMER (VOC) — capture what customers actually say, in their own words "
@@ -249,7 +249,7 @@ CASE = [
     dict(
         num=2,
         codes="A3",
-        labs="Lab 3",
+        labs="Activity 3",
         question=(
             "The team needs to find out WHY the queue is slow rather than guessing. Recommend a "
             "root cause analysis approach the team should use, explain why it is suitable, and apply "
@@ -258,7 +258,7 @@ CASE = [
         lines=14,
         answer=[
             "Recommend 5 WHYS and/or a FISHBONE (Ishikawa) DIAGRAM, and explain the choice "
-            "(Lab 3 — Analyze: Find the Root Cause, worked against delay-reason-pareto-data.csv "
+            "(Activity 3 — Analyze: Find the Root Cause, worked against delay-reason-pareto-data.csv "
             "and cause-evidence-sheet.csv; Slides: DMAIC · Analyze):",
             "• Why suitable: both are simple, quick, team-based tools that need no statistics, which "
             "suits a White Belt team acting on observations. They move the team from the SYMPTOM "
@@ -291,7 +291,7 @@ CASE = [
     dict(
         num=3,
         codes="A4",
-        labs="Lab 2",
+        labs="Activity 2",
         question=(
             "List TWO measures (KPIs) BrewBean Cafe should collect to understand how the process is "
             "really performing, explain why each is important, and state for each whether it is "
@@ -300,7 +300,7 @@ CASE = [
         lines=14,
         answer=[
             "Any TWO sensible measures, each with purpose, data type and collection method "
-            "(Lab 2 — Measure, worked against morning-rush-observation-log.csv and "
+            "(Activity 2 — Measure, worked against morning-rush-observation-log.csv and "
             "process-step-timings.csv; Slides: DMAIC · Measure):",
             "• CUSTOMER WAIT TIME (minutes, from joining the queue to receiving the drink). "
             "Why: it is the measure the customer actually experiences and it maps directly to the "
@@ -327,7 +327,7 @@ CASE = [
     dict(
         num=4,
         codes="A5",
-        labs="Lab 5",
+        labs="Activity 5",
         question=(
             "Suppose the team makes a change and the average wait time improves, but after one month "
             "it has drifted back towards 15 minutes. Recommend what the team should do to make the "
@@ -336,7 +336,7 @@ CASE = [
         lines=14,
         answer=[
             "The drift back is exactly what the CONTROL phase exists to prevent — without it, "
-            "processes quietly return to the old way (Lab 5 — Control, worked against "
+            "processes quietly return to the old way (Activity 5 — Control, worked against "
             "post-improvement-monitoring.csv, whose week 3 shows precisely this drift; "
             "Slides: DMAIC · Control).",
             "",
