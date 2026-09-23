@@ -217,9 +217,21 @@ def course_code_from_courseware(repo):
 
 # ---------------------------------------------------------------------- LMS API
 
+def _auth_headers(extra=None):
+    """The API expects the key in X-API-Key; without it every endpoint 401s."""
+    h = {"User-Agent": "lms-push"}
+    key = os.environ.get("LMS_TMS_API_KEY")
+    if key:
+        h["X-API-Key"] = key
+    if extra:
+        h.update(extra)
+    return h
+
+
 def get_json(url):
     try:
-        with urllib.request.urlopen(url, timeout=60) as r:
+        req = urllib.request.Request(url, headers=_auth_headers())
+        with urllib.request.urlopen(req, timeout=60) as r:
             return json.loads(r.read())
     except urllib.error.HTTPError as e:
         raise SystemExit(f"GET {url} -> {e.code}: {e.read()[:300].decode(errors='replace')}")
@@ -256,8 +268,8 @@ def put_multipart(url, fields):
     body += f"--{boundary}--\r\n".encode()
     req = urllib.request.Request(
         url, data=body, method="PUT",
-        headers={"Content-Type": f"multipart/form-data; boundary={boundary}",
-                 "Content-Length": str(len(body))})
+        headers=_auth_headers({"Content-Type": f"multipart/form-data; boundary={boundary}",
+                               "Content-Length": str(len(body))}))
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
             return r.status, json.loads(r.read() or "{}")
