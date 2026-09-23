@@ -1,0 +1,21 @@
+Week,Day,Date,Avg Wait (min),Restock Done Before 07:30?,Drinks Remade,Within 8-min Target?
+1,Mon,2026-06-29,6.2,Yes,3,Yes
+1,Tue,2026-06-30,5.9,Yes,2,Yes
+1,Wed,2026-07-01,6.4,Yes,3,Yes
+1,Thu,2026-07-02,6.0,Yes,2,Yes
+1,Fri,2026-07-03,5.7,Yes,2,Yes
+2,Mon,2026-07-06,6.1,Yes,3,Yes
+2,Tue,2026-07-07,6.6,Yes,3,Yes
+2,Wed,2026-07-08,6.3,Yes,2,Yes
+2,Thu,2026-07-09,6.8,Yes,4,Yes
+2,Fri,2026-07-10,6.2,Yes,3,Yes
+3,Mon,2026-07-13,7.4,No,5,Yes
+3,Tue,2026-07-14,8.9,No,6,No
+3,Wed,2026-07-15,9.6,No,6,No
+3,Thu,2026-07-16,10.2,No,7,No
+3,Fri,2026-07-17,11.1,No,8,No
+4,Mon,2026-07-20,6.5,Yes,3,Yes
+4,Tue,2026-07-21,6.1,Yes,2,Yes
+4,Wed,2026-07-22,5.8,Yes,2,Yes
+4,Thu,2026-07-23,6.0,Yes,3,Yes
+4,Fri,2026-07-24,5.9,Yes,2,Yes

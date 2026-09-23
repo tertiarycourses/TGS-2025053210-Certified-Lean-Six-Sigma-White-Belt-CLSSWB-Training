@@ -14,7 +14,7 @@ This repository contains **5 guided Lean Six Sigma White Belt labs** (5 core and
 
 | Artifact | File |
 |----------|------|
-| **Slide deck** | `courseware/Certified Lean Six Sigma White Belt (CLSSWB) Training-v2.pptx` (and `.pdf`) |
+| **Slide deck** | `courseware/Certified Lean Six Sigma White Belt (CLSSWB) Training-v3.pptx` (and `.pdf`) |
 | **Learner Guide (Markdown)** | [LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.md](LG-Certified%20Lean%20Six%20Sigma%20White%20Belt%20%28CLSSWB%29%20Training.md) |
 | **Learner Guide (DOCX/PDF)** | `courseware/LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
 | **Lesson Plan (DOCX/PDF)** | `courseware/LP-Certified Lean Six Sigma White Belt (CLSSWB) Training.docx` (and `.pdf`) |
@@ -39,23 +39,23 @@ This repository contains **5 guided Lean Six Sigma White Belt labs** (5 core and
 
 ### Define — Understand the Problem
 
-- [Lab 1 - Define — Customer Requirements and the Problem Statement](labs/lab-01-define-customer-requirements-and-the-problem-statement.md)
+- [Lab 1 - Define — Customer Requirements and the Problem Statement](labs/lab-01-define-customer-requirements-and-the-problem-statement/README.md) — [data](labs/lab-01-define-customer-requirements-and-the-problem-statement/data/), [model answer](labs/lab-01-define-customer-requirements-and-the-problem-statement/model-answer.md)
 
 ### Measure — See What Is Really Happening
 
-- [Lab 2 - Measure — Map the Process and Spot the Waste](labs/lab-02-measure-map-the-process-and-spot-the-waste.md)
+- [Lab 2 - Measure — Map the Process and Spot the Waste](labs/lab-02-measure-map-the-process-and-spot-the-waste/README.md) — [data](labs/lab-02-measure-map-the-process-and-spot-the-waste/data/), [model answer](labs/lab-02-measure-map-the-process-and-spot-the-waste/model-answer.md)
 
 ### Analyze — Find the Cause
 
-- [Lab 3 - Analyze — Find the Root Cause](labs/lab-03-analyze-find-the-root-cause.md)
+- [Lab 3 - Analyze — Find the Root Cause](labs/lab-03-analyze-find-the-root-cause/README.md) — [data](labs/lab-03-analyze-find-the-root-cause/data/), [model answer](labs/lab-03-analyze-find-the-root-cause/model-answer.md)
 
 ### Improve — Fix the Cause
 
-- [Lab 4 - Improve — Choose and Pilot a Countermeasure](labs/lab-04-improve-choose-and-pilot-a-countermeasure.md)
+- [Lab 4 - Improve — Choose and Pilot a Countermeasure](labs/lab-04-improve-choose-and-pilot-a-countermeasure/README.md) — [data](labs/lab-04-improve-choose-and-pilot-a-countermeasure/data/), [model answer](labs/lab-04-improve-choose-and-pilot-a-countermeasure/model-answer.md)
 
 ### Control — Hold the Gain
 
-- [Lab 5 - Control — Hold the Gain and Hand Over](labs/lab-05-control-hold-the-gain-and-hand-over.md)
+- [Lab 5 - Control — Hold the Gain and Hand Over](labs/lab-05-control-hold-the-gain-and-hand-over/README.md) — [data](labs/lab-05-control-hold-the-gain-and-hand-over/data/), [model answer](labs/lab-05-control-hold-the-gain-and-hand-over/model-answer.md)
 
 ---
 
@@ -65,7 +65,13 @@ This repository contains **5 guided Lean Six Sigma White Belt labs** (5 core and
 courseware/          slide deck (PPTX + PDF), Learner Guide, Lesson Plan
   archive/           superseded deck versions
   assets/            diagrams and images used by the deck
-labs/                the 5 lab worksheets + index + toolkit
+labs/                5 lab folders + index + toolkit
+  lab-NN-<name>/     one folder per lab:
+    README.md          the lab worksheet
+    data/              mock datasets (.csv) + .xlsx workbook + data dictionary
+    templates/         blank worksheets to fill in (.csv)
+    model-answer.md    worked model answer
+    facilitator-notes.md   trainer notes
 LG-Certified Lean Six Sigma White Belt (CLSSWB) Training.md
                      Learner Guide (Markdown mirror of the DOCX)
 .claude/skills/courseware-build/build/
@@ -97,4 +103,4 @@ All artifacts are generated from `course_data.py` + `data_domainN.py`, so the de
 
 ---
 
-*Version v2 · 19 July 2026 · © 2026 Tertiary Infotech Academy Pte Ltd*
+*Version v3 · 23 September 2026 · © 2026 Tertiary Infotech Academy Pte Ltd*

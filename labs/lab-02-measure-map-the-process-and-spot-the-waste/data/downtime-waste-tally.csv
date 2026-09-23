@@ -1,0 +1,9 @@
+Waste Type (DOWNTIME),What It Looks Like Here,Process Step,Tally Count,Est. Time Lost per Morning (min)
+D - Defects,Drinks made wrong and remade,15,7,9
+O - Overproduction,,,,
+W - Waiting,Customers queueing; cups waiting at the barista station,"2, 8",60,408
+N - Non-utilised talent,,,,
+T - Transport,,,,
+I - Inventory,,,,
+M - Motion,Barista walking to the back store for milk,10,18,29
+E - Extra-processing,,,,

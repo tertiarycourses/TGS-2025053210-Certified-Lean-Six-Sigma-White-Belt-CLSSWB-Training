@@ -1,0 +1,13 @@
+Option,Countermeasure,Addresses Which Root Cause,Impact (1-5),Effort (1-5),Est. Cost (SGD),Risk
+A,Add counter milk restock to the 7:00am opening checklist,Milk not restocked,5,1,0,Low
+B,Move a milk fridge to the barista station,Milk not restocked,5,3,900,Low
+C,Open the second till from 07:45 to 09:00,One till open,4,2,0,Low
+D,Hire an extra barista for the morning shift,One till open,4,5,2400,Medium
+E,"Take the order straight into the till, drop the cup-writing step",Order re-keyed,3,2,0,Low
+F,Install a mobile pre-order app,One till open,5,5,12000,High
+G,Colour-coded cup stickers for milk type,Drinks remade,4,1,40,Low
+H,Barista reads the order back before handing over,Drinks remade,3,1,0,Low
+I,"Move cups, lids and sleeves into one station caddy (5S)",Cups and lids apart,3,1,60,Low
+J,Replace the card machine,Card machine slow,2,4,700,Medium
+K,Display the expected wait on a board at the door,No measurement,2,1,30,Low
+L,Buy a second espresso grinder,Single grinder,3,4,3200,Medium

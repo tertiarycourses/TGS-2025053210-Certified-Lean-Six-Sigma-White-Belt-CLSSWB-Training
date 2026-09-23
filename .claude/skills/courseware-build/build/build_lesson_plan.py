@@ -3,7 +3,7 @@
 
 Cover page + Document Version Control Record + auto TOC + Arial 11pt body +
 colour-coded 2-day schedule tables (9:30am-6:30pm, 8 training hours/day, 1h
-lunch, tea within, final assessment Day 2 4:00pm). Topics/labs come from
+lunch, tea within, final assessment Day 1 5:30pm). Topics/labs come from
 course_data + the domain data files so the LP stays aligned with the deck,
 guide and labs.
 """
@@ -19,6 +19,7 @@ from data_domain1 import DOMAIN1; from data_domain2 import DOMAIN2
 from data_domain3 import DOMAIN3
 from data_domain4 import DOMAIN4
 from data_domain5 import DOMAIN5
+from lab_data import LAB_DATA
 ACT=DOMAIN1+DOMAIN2+DOMAIN3+DOMAIN4+DOMAIN5
 import prodoc
 def _find_repo(start):
@@ -159,6 +160,10 @@ prodoc.add_version_control(doc,[
   "depth: sigma-level and DPMO calculation, MSA, FMEA, value stream mapping, Kano analysis, weighted "
   "solution-selection matrices and SPC control limits removed. Assessment aligned to the TMS record: WA (SAQ, 30 min) "
   "plus Case Study (30 min); slide references added to the schedule.",C.TRAINER),
+ ("3",C.VERSION_DATE,"Lab data pack added: each lab is now a self-contained folder with its mock "
+  "dataset (CSV + Excel), blank templates, a worked model answer and facilitator notes. The Lab "
+  "Reference table now shows the data pack issued for each lab, and the lab steps reference the "
+  "specific data and template files the learner works from.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
@@ -187,7 +192,7 @@ for lo in C.LEARNING_OUTCOMES:
 H("Assessment",1)
 for a in [C.ASSESSMENT["written"],C.ASSESSMENT["practical"],
           "Format: Open Book — course slides, Learner Guide and approved materials only.",
-          "Final assessment is conducted on Day 2 from 4:00 pm.",C.ASSESSMENT["note"]]:
+          "Final assessment is conducted on Day 1 from 5:30 pm.",C.ASSESSMENT["note"]]:
     p=doc.add_paragraph(style="List Bullet"); p.add_run(a).font.size=Pt(10.5)
 
 def set_cell(cell,text,bold=False,size=9.5,color=None,fill=None,align=None):
@@ -221,9 +226,9 @@ for day,(theme,rows) in SCHEDULE.items():
     assert training==480, f"Day {day} training minutes = {training}, expected 480"
 
 H("Lab Reference (aligned to the DMAIC phases)",1)
-tt=doc.add_table(rows=0,cols=3); tt.style="Table Grid"
+tt=doc.add_table(rows=0,cols=4); tt.style="Table Grid"
 hdr=tt.add_row().cells
-for i,htext in enumerate(["DMAIC phase / Topic","Weighting","Labs"]):
+for i,htext in enumerate(["DMAIC phase / Topic","Weighting","Labs","Data pack issued to learners"]):
     set_cell(hdr[i],htext,bold=True,size=10,color=RGBColor(0xFF,0xFF,0xFF),fill=HEADER_FILL)
 for tp in C.TOPICS:
     acts=[a for a in ACT if a["topic"]==tp["num"]]
@@ -232,6 +237,22 @@ for tp in C.TOPICS:
     set_cell(cells[1],tp["weighting"],size=9.5,fill=TOPIC_FILL)
     set_cell(cells[2],", ".join(
         f"Lab {a['num']}" + (" (elective)" if a.get("elective") else "") for a in acts),size=9.5)
+    packs=[]
+    for a in acts:
+        pk=LAB_DATA.get(a["num"])
+        if pk:
+            packs.append("; ".join(d["title"] for d in pk.get("datasets",[]))
+                         + f" (+{len(pk.get('templates',[]))} blank templates)")
+    set_cell(cells[3],"  |  ".join(packs) if packs else "-",size=9)
+for row in tt.rows:
+    row.cells[0].width=Inches(1.55); row.cells[1].width=Inches(0.7)
+    row.cells[2].width=Inches(1.05); row.cells[3].width=Inches(3.5)
+pp=doc.add_paragraph()
+rr=pp.add_run("Every lab is a self-contained folder holding the worksheet, its mock data (CSV and "
+              "Excel), blank templates, a worked model answer and facilitator notes. The datasets "
+              "are internally consistent across the five labs, so the BrewBean Cafe story "
+              "reconciles from Define through to Control.")
+rr.italic=True; rr.font.size=Pt(9.5); rr.font.color.rgb=GREY
 
 prodoc.add_page_numbers(doc)
 prodoc.enable_update_fields(doc)

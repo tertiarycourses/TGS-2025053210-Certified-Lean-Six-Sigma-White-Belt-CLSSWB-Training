@@ -1,12 +1,28 @@
 #!/usr/bin/env python3
-"""Generate labs/lab-NN-*.md + labs/README.md + labs/tools.md from the same
-single source (course_data + data_domainN) that drives the PPT, LP and LG, so the
-labs can never drift out of alignment with the rest of the courseware.
+"""Generate the labs/ tree from the same single source (course_data +
+data_domainN + lab_data) that drives the PPT, LP and LG, so the labs can never
+drift out of alignment with the rest of the courseware.
+
+EACH LAB IS ITS OWN FOLDER:
+
+    labs/README.md                    index
+    labs/tools.md                     toolkit, formulas, DOWNTIME reference
+    labs/lab-01-<slug>/
+        README.md                     the lab worksheet
+        data/                         mock datasets (.csv) + data dictionary
+        data/lab-01-workbook.xlsx     every dataset + template, one per tab
+        templates/                    blank worksheets (.csv)
+        model-answer.md               worked model answer
+        facilitator-notes.md          trainer-facing notes
+
+The datasets, templates, model answers and facilitator notes all come from
+lab_data.py and are written by build_lab_pack.py.
 """
 import os
 import re
 import sys
 import glob
+import shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -16,6 +32,8 @@ from data_domain2 import DOMAIN2
 from data_domain3 import DOMAIN3
 from data_domain4 import DOMAIN4
 from data_domain5 import DOMAIN5
+from build_lab_pack import build_pack
+from lab_data import LAB_DATA
 
 ACT = sorted(DOMAIN1 + DOMAIN2 + DOMAIN3 + DOMAIN4 + DOMAIN5, key=lambda a: a["num"])
 TOPICS = {t["num"]: t for t in C.TOPICS}
@@ -58,6 +76,11 @@ def slug(title):
     return "-".join(t.split())[:60]
 
 
+def folder_name(a):
+    """The per-lab folder, e.g. lab-01-define-customer-requirements-..."""
+    return f"lab-{a['num']:02d}-{slug(a['title'])}"
+
+
 def lab_md(a):
     kind = "Elective" if a.get("elective") else "Core"
     title = a["title"].replace("Elective — ", "")
@@ -88,6 +111,43 @@ def lab_md(a):
     out.append("")
     out.append(f"**Tools and techniques:** {a['services']}")
     out.append("")
+
+    # ---- the data pack that ships in this lab folder ----
+    pack = LAB_DATA.get(a["num"])
+    if pack:
+        out.append("## Your data pack")
+        out.append("")
+        out.append("Everything you need is in this folder. The data is mock data built for the "
+                   "BrewBean Cafe scenario — it is realistic and internally consistent across all "
+                   "five labs, so what you find here carries into the next lab.")
+        out.append("")
+        out.append("### Data to work from — `data/`")
+        out.append("")
+        out.append("| File | What it is |")
+        out.append("|------|------------|")
+        for d in pack.get("datasets", []):
+            out.append(f"| [`{d['name']}.csv`](data/{d['name']}.csv) | {d['title']} "
+                       f"({len(d['rows'])} rows) |")
+        xl = f"lab-{a['num']:02d}-workbook.xlsx"
+        out.append(f"| [`{xl}`](data/{xl}) | **Excel workbook** — every dataset *and* every blank "
+                   f"template below, one per tab |")
+        out.append("")
+        if pack.get("templates"):
+            out.append("### Blank worksheets to fill in — `templates/`")
+            out.append("")
+            out.append("| File | What you fill in |")
+            out.append("|------|------------------|")
+            for t in pack["templates"]:
+                out.append(f"| [`{t['name']}.csv`](templates/{t['name']}.csv) | {t['title']} — "
+                           f"{t['desc']} |")
+            out.append("")
+        out.append("> **Tip:** open the Excel workbook if you want everything in one window with "
+                   "the templates ready to type into. Use the CSVs if you prefer Google Sheets, "
+                   "LibreOffice or a plain text editor.")
+        out.append("")
+        out.append("See [`data/README.md`](data/README.md) for the data dictionary — what every "
+                   "column means and how the figures were collected.")
+        out.append("")
     # any tool URLs used by this lab
     used = []
     for _, cmd in a["steps"]:
@@ -125,6 +185,14 @@ def lab_md(a):
     out.append(f"Save your output — it forms part of your BrewBean Cafe improvement package and is your "
                f"revision material for the assessment.")
     out.append("")
+    if pack and pack.get("model"):
+        out.append("## Compare your answer")
+        out.append("")
+        out.append("Once you have attempted the lab, compare your thinking against "
+                   "[`model-answer.md`](model-answer.md). There is rarely one right answer in "
+                   "Lean Six Sigma — what matters is whether your reasoning is supported by the "
+                   "data in front of you.")
+        out.append("")
     out.append("---")
     out.append("")
     out.append(f"*{C.TITLE} · {C.COURSE_CODE} · Version {C.VERSION} · "
@@ -150,15 +218,49 @@ def readme_md():
     out.append("")
     out.append("## Lab index")
     out.append("")
-    out.append("| # | Lab | DMAIC phase | Type |")
-    out.append("|---|-----|-------------|------|")
+    out.append("Each lab is a self-contained folder: the worksheet, its mock data (CSV + Excel), "
+               "blank templates to fill in, a worked model answer and trainer notes.")
+    out.append("")
+    out.append("| # | Lab | DMAIC phase | Type | Data pack |")
+    out.append("|---|-----|-------------|------|-----------|")
     files = {}
     for a in ACT:
-        fn = f"lab-{a['num']:02d}-{slug(a['title'])}.md"
-        files[a["num"]] = fn
+        fd = folder_name(a)
+        files[a["num"]] = fd
         kind = "Elective" if a.get("elective") else "Core"
         title = a["title"].replace("Elective — ", "")
-        out.append(f"| {a['num']} | [{title}]({fn}) | {TOPICS[a['topic']]['phase']} | {kind} |")
+        pack = LAB_DATA.get(a["num"], {})
+        nds = len(pack.get("datasets", []))
+        ntp = len(pack.get("templates", []))
+        blurb = f"{nds} dataset{'s' if nds != 1 else ''} + {ntp} template{'s' if ntp != 1 else ''}" \
+            if pack else "—"
+        out.append(f"| {a['num']} | [{title}]({fd}/README.md) | {TOPICS[a['topic']]['phase']} | "
+                   f"{kind} | [{blurb}]({fd}/data/) |")
+    out.append("")
+    out.append("## What is in each lab folder")
+    out.append("")
+    out.append("| Item | What it is |")
+    out.append("|------|------------|")
+    out.append("| `README.md` | The lab worksheet — objective, scenario, steps and the check |")
+    out.append("| `data/` | The mock datasets as `.csv`, plus one `.xlsx` workbook holding every "
+               "dataset and template on its own tab |")
+    out.append("| `data/README.md` | Data dictionary — what each column means |")
+    out.append("| `templates/` | Blank worksheets to fill in, as `.csv` |")
+    out.append("| `model-answer.md` | The worked model answer — read it *after* you attempt the lab |")
+    out.append("| `facilitator-notes.md` | Trainer copy: timing, what to watch for, common "
+               "mistakes, debrief |")
+    out.append("")
+    out.append("## About the data")
+    out.append("")
+    out.append("Every figure is **mock data** built for training. It is internally consistent "
+               "across all five labs:")
+    out.append("")
+    out.append("- The Lab 2 observation log is the evidence base for the Lab 3 Pareto.")
+    out.append("- The Lab 3 root cause is what the Lab 4 countermeasure addresses.")
+    out.append("- The Lab 4 pilot results carry into the Lab 5 monitoring data.")
+    out.append("")
+    out.append("So the numbers you quote in one lab still hold in the next, and the whole story "
+               "reconciles at the end.")
     out.append("")
     out.append("## The interactive toolkit")
     out.append("")
@@ -246,15 +348,17 @@ def tools_md():
 
 # ---------------------------------------------------------------- write
 os.makedirs(LABS, exist_ok=True)
-for old in glob.glob(os.path.join(LABS, "lab-*.md")):
-    os.remove(old)
 
 readme, files = readme_md()
 written = 0
+packs = {}
 for a in ACT:
-    path = os.path.join(LABS, files[a["num"]])
-    with open(path, "w") as f:
+    folder = os.path.join(LABS, files[a["num"]])
+    os.makedirs(folder, exist_ok=True)
+    with open(os.path.join(folder, "README.md"), "w") as f:
         f.write(lab_md(a))
+    title = a["title"].replace("Elective — ", "")
+    packs[a["num"]] = build_pack(a["num"], title, folder)
     written += 1
 
 with open(os.path.join(LABS, "README.md"), "w") as f:
@@ -263,6 +367,10 @@ with open(os.path.join(LABS, "tools.md"), "w") as f:
     f.write(tools_md())
 
 core = sum(1 for a in ACT if not a.get("elective"))
+
+# Superseded flat lab files from the pre-folder layout. They are NOT deleted
+# automatically — the build reports them and leaves the decision to a human.
+STALE = sorted(glob.glob(os.path.join(LABS, "lab-*.md")))
 
 
 # ---------------------------------------------------------------- repo README
@@ -329,7 +437,13 @@ def repo_readme(files):
         for a in acts:
             title = a["title"].replace("Elective — ", "")
             tag = " *(elective)*" if a.get("elective") else ""
-            out.append(f"- [Lab {a['num']} - {title}](labs/{files[a['num']]}){tag}")
+            fd = files[a["num"]]
+            pk = LAB_DATA.get(a["num"], {})
+            extra = ""
+            if pk:
+                extra = (f" — [data]({enc('labs/'+fd+'/data/')}), "
+                         f"[model answer]({enc('labs/'+fd+'/model-answer.md')})")
+            out.append(f"- [Lab {a['num']} - {title}]({enc('labs/'+fd+'/README.md')}){tag}{extra}")
         out.append("")
     out.append("---")
     out.append("")
@@ -339,7 +453,13 @@ def repo_readme(files):
     out.append("courseware/          slide deck (PPTX + PDF), Learner Guide, Lesson Plan")
     out.append("  archive/           superseded deck versions")
     out.append("  assets/            diagrams and images used by the deck")
-    out.append(f"labs/                the {len(ACT)} lab worksheets + index + toolkit")
+    out.append(f"labs/                {len(ACT)} lab folders + index + toolkit")
+    out.append("  lab-NN-<name>/     one folder per lab:")
+    out.append("    README.md          the lab worksheet")
+    out.append("    data/              mock datasets (.csv) + .xlsx workbook + data dictionary")
+    out.append("    templates/         blank worksheets to fill in (.csv)")
+    out.append("    model-answer.md    worked model answer")
+    out.append("    facilitator-notes.md   trainer notes")
     out.append(f"LG-{C.SHORT_TITLE}.md")
     out.append("                     Learner Guide (Markdown mirror of the DOCX)")
     out.append(".claude/skills/courseware-build/build/")
@@ -380,5 +500,15 @@ def repo_readme(files):
 with open(os.path.join(REPO, "README.md"), "w") as f:
     f.write(repo_readme(files))
 
-print(f"Saved {written} lab files to {LABS}  ({core} core, {written-core} elective)")
+print(f"Saved {written} lab FOLDERS to {LABS}  ({core} core, {written-core} elective)")
+for n in sorted(packs):
+    pk = packs[n]
+    if pk:
+        print(f"  lab {n:02d}: {len(pk['datasets'])} dataset(s) ({pk['rows']} rows), "
+              f"{len(pk['templates'])} template(s), {pk['xlsx']}, model answer, facilitator notes")
 print("Saved labs/README.md, labs/tools.md and README.md")
+if STALE:
+    print("\nNOTE: superseded flat lab files remain (not deleted automatically):")
+    for f in STALE:
+        print("  " + os.path.relpath(f, REPO))
+    print("  Remove them once you are satisfied with the new folder layout.")

@@ -1,0 +1,7 @@
+Day,Date,Customers Observed,Avg Wait (min),Longest Wait (min),Drinks Remade,Mid-order Milk Trips,Restock Done Before 07:30?
+Baseline,2026-06-19,60,8.9,15.0,7,18,No
+Mon,2026-06-22,58,8.4,13.5,5,4,Yes
+Tue,2026-06-23,61,7.1,11.0,4,2,Yes
+Wed,2026-06-24,59,6.3,9.5,3,1,Yes
+Thu,2026-06-25,62,9.8,15.0,6,7,No
+Fri,2026-06-26,60,6.0,9.0,3,0,Yes

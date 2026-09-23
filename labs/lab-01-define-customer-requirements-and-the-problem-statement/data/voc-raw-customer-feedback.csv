@@ -1,0 +1,31 @@
+Feedback ID,Date,Source,Customer Type,Verbatim Comment,Rating (1-5)
+F01,2026-06-01,Online review,Regular,Waited 14 minutes for one flat white. I'm late for work now.,1
+F02,2026-06-01,Counter remark,Regular,Why is only one till ever open in the morning?,2
+F03,2026-06-02,Online review,Occasional,Coffee is great but the queue is out the door by 8am.,3
+F04,2026-06-02,Comment card,Regular,"Asked for oat milk, got dairy. Had to queue again to get it fixed.",1
+F05,2026-06-03,Online review,Regular,I need to be in and out in 5 minutes. It's more like 15.,2
+F06,2026-06-03,Counter remark,New,Is there a faster way to order? I'd pre-order if I could.,3
+F07,2026-06-04,Online review,Regular,Third time this month my order was wrong. Going elsewhere.,1
+F08,2026-06-04,Comment card,Occasional,Staff are lovely but clearly rushed off their feet.,4
+F09,2026-06-05,Online review,Regular,They ran out of milk at the counter AGAIN mid-order.,2
+F10,2026-06-05,Counter remark,Regular,The barista keeps disappearing to the back. What's going on?,2
+F11,2026-06-08,Online review,Occasional,"Great coffee, terrible wait. I only go on weekends now.",3
+F12,2026-06-08,Comment card,Regular,Please open the second till between 8 and 9.,2
+F13,2026-06-09,Online review,New,Queued 12 minutes then gave up and left.,1
+F14,2026-06-09,Counter remark,Regular,I want to know how long the wait is before I join the queue.,3
+F15,2026-06-10,Online review,Regular,Order written on the cup then typed in again. Seems slow.,3
+F16,2026-06-10,Comment card,Regular,My usual order should not need explaining every single day.,3
+F17,2026-06-11,Online review,Occasional,Wrong drink twice in a row. Please check before handing over.,1
+F18,2026-06-11,Counter remark,Regular,Card machine took ages. Cash would have been quicker.,3
+F19,2026-06-12,Online review,Regular,Consistently good coffee when they get the order right.,4
+F20,2026-06-12,Comment card,New,No sign of how long the wait is. I had no idea what I was in for.,2
+F21,2026-06-15,Online review,Regular,Waited 15 minutes. That is my whole coffee break gone.,1
+F22,2026-06-15,Counter remark,Regular,Can you not make the regulars' orders ahead?,3
+F23,2026-06-16,Online review,Occasional,"Lovely staff, chaotic mornings.",3
+F24,2026-06-16,Comment card,Regular,Decaf came as regular. I can't drink that.,1
+F25,2026-06-17,Online review,Regular,5 minute promise on the wall is a joke at 8:15am.,1
+F26,2026-06-17,Counter remark,New,Do you do mobile ordering? Everywhere else does.,3
+F27,2026-06-18,Online review,Regular,Cups and lids seem to be kept miles apart. Odd to watch.,3
+F28,2026-06-18,Comment card,Regular,"I want the same drink, same way, every morning. That's all.",4
+F29,2026-06-19,Online review,Occasional,Second till sat empty while 11 of us queued.,1
+F30,2026-06-19,Counter remark,Regular,If it's going to be 15 minutes just tell me and I'll come back.,2

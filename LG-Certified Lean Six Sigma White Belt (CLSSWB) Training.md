@@ -1,6 +1,6 @@
 # Certified Lean Six Sigma White Belt (CLSSWB) Training — Learner Guide
 
-**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v2 · 19 July 2026**
+**WSQ Course Code:** TGS-2025053210  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v3 · 23 September 2026**
 
 ## Contents
 
@@ -132,20 +132,30 @@ Goal: Start the BrewBean Cafe improvement the way every real project starts: fin
 
 A VOC-to-CTQ table, a written problem statement, a SMART goal and a simple scope table.   (Tools and techniques: Voice of the Customer, CTQ, problem statement, SMART goal, project scope.)
 
+**Your data pack**
+
+This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+
+- DATA — Raw Voice of the Customer feedback (30 rows): Thirty pieces of unedited customer feedback collected by the BrewBean Cafe improvement team over two weeks — online reviews, comment cards and remarks made at the counter. This is the raw material for Step 2 and Step 3: the learner reads it, extracts VOC statements and turns them into measurable CTQs.
+- TEMPLATE — VOC-to-CTQ table (blank): Step 2 and Step 3. One row per VOC statement.
+- TEMPLATE — Problem statement, SMART goal and scope (blank): Steps 4, 5 and 6.
+- Excel workbook: lab-01-workbook.xlsx — every dataset and template above, one per tab.
+- Model answer: model-answer.md — read it AFTER you attempt the lab.
+
 **Step-by-step**
 
-1. Read the BrewBean Cafe scenario and underline every customer complaint you can find.
-2. Write down five Voice of the Customer statements in the customer's own words (e.g. 'I'm late for work because the queue is too slow').
-3. Turn each VOC statement into a measurable CTQ requirement — add a number and a unit (e.g. 'served within 5 minutes').
-4. Write the problem statement using the template: what is wrong, where, since when, and how big. Do NOT write a solution.
+1. Read the BrewBean Cafe scenario, then open data/voc-raw-customer-feedback.csv (or the workbook) and read all 30 pieces of customer feedback. Underline every complaint you can find.
+2. Using templates/voc-to-ctq-template.csv, write down five Voice of the Customer statements in the customer's OWN words, quoted from the Verbatim Comment column — do not paraphrase them yet.
+3. Turn each VOC statement into a measurable CTQ requirement in the same template — every CTQ must carry a number AND a unit (e.g. 'served within 5 minutes').
+4. In templates/problem-statement-and-scope-template.csv, write the problem statement: what is wrong, where, since when, and how big. Do NOT write a solution.
 5. Check your problem statement against the SMART test and rewrite the goal so it is Specific, Measurable, Achievable, Relevant and Time-bound.
-6. Fill the in-scope / out-of-scope table so the team knows where the project stops.
+6. Fill the in-scope / out-of-scope rows at the bottom of the same template so the team knows where the project stops.
 
 **Check your work**
 
 Every CTQ has a number and a unit, your problem statement contains no solution, and your goal has a metric, a baseline, a target and a date.
 
-> **Note:** The full worksheet for this lab is in labs/lab-01-*.md.
+> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-01-*/ folder.
 
 ---
 
@@ -174,21 +184,34 @@ Goal: You cannot improve what you cannot see. Walk the BrewBean Cafe morning rus
 
 A SIPOC overview, a step-by-step process map with timings, and a completed waste tally sheet.   (Tools and techniques: SIPOC, process mapping, types of data, check sheets, the eight wastes (DOWNTIME).)
 
+**Your data pack**
+
+This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+
+- DATA — Morning rush observation log (60 rows): 60 customers observed end to end during one weekday morning rush at BrewBean Cafe. Wait time is measured from the customer joining the queue to the drink being handed over. This is THE baseline dataset for the course — Lab 3's Pareto is derived from the Delay Reason column and Lab 5's control chart compares back to it.
+- DATA — Process step timings (15 rows): The average observed time for each step of the morning-rush process, with the team's value-add judgement left blank in the template. Use it for Step 3 and Step 4 of the lab.
+- DATA — DOWNTIME waste tally (partially completed) (8 rows): The team's waste walk, half done. Three rows are filled in as worked examples; the learner completes the rest in Step 6 from the observation log and the process timings.
+- TEMPLATE — SIPOC (blank): Step 2. Keep Process to 5-7 steps only.
+- TEMPLATE — Process map with value-add judgement (blank): Steps 3 and 4.
+- TEMPLATE — DOWNTIME tally sheet (blank): Step 6.
+- Excel workbook: lab-02-workbook.xlsx — every dataset and template above, one per tab.
+- Model answer: model-answer.md — read it AFTER you attempt the lab.
+
 **Step-by-step**
 
 1. Agree the start and stop points of the process — start: customer joins the queue; stop: customer receives the drink.
-2. Complete the SIPOC template: Suppliers, Inputs, Process (5-7 steps only), Outputs, Customers.
-3. List the process steps in order and write the observed time next to each one.
-4. Mark each step as value-adding (the customer would pay for it) or not value-adding.
-5. Classify the data you collected: which figures are discrete (counted) and which are continuous (measured)?
-6. Walk the process again with the DOWNTIME check sheet and tally every waste you observe against its type.
-7. Identify which single waste type you tallied most often, and which process step it happens at.
+2. Complete templates/sipoc-template.csv: Suppliers, Inputs, Process (5-7 steps only), Outputs, Customers.
+3. Open data/process-step-timings.csv. Copy the 15 steps into templates/process-map-template.csv with their observed times.
+4. Mark each step VA or NVA in the template — the test is whether the customer would pay extra for THAT step — and write one line saying why.
+5. Look at the columns in data/morning-rush-observation-log.csv and classify each: which figures are discrete (counted) and which are continuous (measured)?
+6. Open data/downtime-waste-tally.csv — three rows are completed as worked examples. Using the observation log and the step timings as your evidence, complete the remaining five rows in templates/downtime-tally-template.csv.
+7. Identify which single waste type you tallied most often and at which process step, then write down the baseline figures (average wait, longest wait, % over the 5-minute promise, drinks remade) — Lab 5 measures the improvement against them.
 
 **Check your work**
 
 Your SIPOC has all five columns filled, every process step has a time, and every waste on your tally sheet is tagged to one of the eight DOWNTIME types.
 
-> **Note:** The full worksheet for this lab is in labs/lab-02-*.md.
+> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-02-*/ folder.
 
 ---
 
@@ -217,21 +240,33 @@ Goal: You now know WHERE the delay happens. This lab asks WHY it happens. Most t
 
 A completed 5 Whys chain, a Fishbone diagram with causes sorted by category, and a shortlist of likely root causes.   (Tools and techniques: Symptom vs cause, 5 Whys, Fishbone (5M) diagram, Pareto chart, common vs special cause variation.)
 
+**Your data pack**
+
+This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+
+- DATA — Delay reason Pareto data (6 rows): The Delay Reason column from the Lab 2 observation log, counted and ranked. This is the 'supplied Pareto chart' the lab's Step 5 refers to — the learner reads it rather than building it from scratch.
+- DATA — Candidate causes and their evidence (12 rows): Every cause the team brainstormed, with whether any evidence actually supports it. Used in Step 7 to shortlist causes on evidence rather than opinion, and in Step 6 to judge common vs special cause.
+- TEMPLATE — 5 Whys chain (blank): Steps 1 and 2. Stop when you reach something the team can act on.
+- TEMPLATE — Fishbone (5M) diagram (blank): Steps 3 and 4. Problem goes in the head of the fish.
+- TEMPLATE — Root cause shortlist (blank): Steps 6 and 7.
+- Excel workbook: lab-03-workbook.xlsx — every dataset and template above, one per tab.
+- Model answer: model-answer.md — read it AFTER you attempt the lab.
+
 **Step-by-step**
 
-1. Write the symptom from your Lab 2 findings at the top of the 5 Whys template (e.g. 'customers wait 15 minutes').
-2. Ask 'why does that happen?' five times, each answer becoming the next question. Stop when you reach something you can act on.
-3. Draw the Fishbone diagram and write the problem in the head of the fish.
-4. Brainstorm possible causes onto the five bones: Manpower, Method, Machine, Material and Measurement.
-5. Read the supplied Pareto chart of BrewBean complaint types and state which few causes account for most of the problem.
-6. Decide for each shortlisted cause whether it is common cause (happens every day) or special cause (a one-off event).
-7. Shortlist the two or three causes best supported by the data you collected in Lab 2.
+1. Write the symptom from your Lab 2 baseline at the top of templates/5-whys-template.csv (e.g. 'customers wait an average of 8.9 minutes against a 5-minute promise').
+2. Ask 'why does that happen?' down the template, each answer becoming the next question. Stop when you reach a PROCESS the team can act on — never at a person.
+3. Open templates/fishbone-template.csv and write the problem in the head of the fish.
+4. Brainstorm possible causes onto the five bones — Manpower, Method, Machine, Material, Measurement — then check them against data/cause-evidence-sheet.csv to see which ones the data actually supports.
+5. Open data/delay-reason-pareto-data.csv — the delay reasons from the Lab 2 log, counted and ranked. Read the Cumulative % column and state which few causes account for most of the problem.
+6. Using the last column of data/cause-evidence-sheet.csv, decide for each cause whether it is common cause (built into the process) or special cause (a one-off event).
+7. In templates/root-cause-shortlist-template.csv, shortlist the two or three causes best supported by evidence — not by opinion.
 
 **Check your work**
 
 Your 5 Whys chain ends in something the team can actually act on, every Fishbone cause sits under one of the five categories, and each shortlisted cause is backed by an observation, not an opinion.
 
-> **Note:** The full worksheet for this lab is in labs/lab-03-*.md.
+> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-03-*/ folder.
 
 ---
 
@@ -260,21 +295,33 @@ Goal: A cause is only worth finding if something changes because of it. Take the
 
 A brainstormed countermeasure list, an impact/effort grid, one selected countermeasure and a simple pilot plan.   (Tools and techniques: Brainstorming, impact/effort screening, 5S, mistake proofing (Poka-Yoke), standard work, piloting.)
 
+**Your data pack**
+
+This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+
+- DATA — Countermeasure options with impact, effort and cost (12 rows): Twelve candidate countermeasures the team generated against the shortlisted root causes, scored for impact and effort. Used in Step 5 to plot the impact/effort grid and choose one.
+- DATA — Pilot week results (6 rows): What actually happened when the chosen countermeasure was piloted for one week. The same 60-customer observation was repeated each day. Used in Step 7 to judge whether the pilot worked, and carried into Lab 5 as the new baseline.
+- TEMPLATE — Countermeasure brainstorm (blank): Steps 1 and 2. At least six ideas, no judging yet.
+- TEMPLATE — Impact/effort grid (blank): Step 5. Score each idea, then place it in a quadrant.
+- TEMPLATE — Standard work and pilot plan (blank): Steps 6 and 7.
+- Excel workbook: lab-04-workbook.xlsx — every dataset and template above, one per tab.
+- Model answer: model-answer.md — read it AFTER you attempt the lab.
+
 **Step-by-step**
 
-1. Write your top root cause from Lab 3 at the top of the sheet — every idea must address THIS cause.
-2. Brainstorm at least six countermeasures without judging any of them yet.
+1. Write your top root cause from Lab 3 at the top of templates/countermeasure-brainstorm-template.csv — every idea must address THIS cause.
+2. Brainstorm at least six countermeasures without judging any of them yet, then compare your list with data/countermeasure-options.csv, which holds the twelve the team generated.
 3. Check whether 5S would help: is anything at the counter hard to find, out of place or untidy?
 4. Check whether mistake proofing would help: could the wrong order be made impossible rather than merely discouraged?
-5. Plot every idea on the impact/effort grid and pick one from the high-impact, low-effort corner.
-6. Write the improved method as standard work — short numbered steps anyone on shift could follow.
-7. Write a one-week pilot plan: what changes, who runs it, what you will measure, and how you will know it worked.
+5. Using the Impact and Effort scores in data/countermeasure-options.csv, plot every idea on templates/impact-effort-grid-template.csv and pick ONE from the high-impact, low-effort corner.
+6. In templates/standard-work-and-pilot-template.csv, write the improved method as standard work — short numbered steps with an unambiguous done/not-done check.
+7. Complete the pilot plan rows of the same template: what changes, who runs it, what you will measure, the baseline to beat, and how you will know it worked. THEN open data/pilot-week-results.csv and compare what actually happened — pay close attention to Thursday.
 
 **Check your work**
 
 Your selected countermeasure clearly addresses the root cause from Lab 3 (not the symptom), and your pilot plan names a measure, an owner and a review date.
 
-> **Note:** The full worksheet for this lab is in labs/lab-04-*.md.
+> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-04-*/ folder.
 
 ---
 
@@ -303,21 +350,33 @@ Goal: Most improvements work for a fortnight and then quietly disappear. Control
 
 A completed control plan, a visual management board sketch, and a one-page summary of the whole DMAIC story.   (Tools and techniques: Control plan, visual management, SOPs, team huddles, handover, one-page summary.)
 
+**Your data pack**
+
+This lab ships with its own mock data for the BrewBean Cafe scenario. Everything below is in the lab folder, as CSV files and as one Excel workbook with a tab per sheet.
+
+- DATA — Post-improvement monitoring — four weeks (20 rows): Four weeks of daily average wait times after the pilot was made permanent. The learner uses this in Steps 1-3 to choose the control measure, set the target and write a reaction plan that would have caught the drift.
+- DATA — Control plan — worked example (one row completed) (4 rows): The control plan format with a single worked row, so the learner can see the level of specificity expected before completing their own in Step 2.
+- TEMPLATE — Control plan (blank): Steps 1, 2 and 3.
+- TEMPLATE — SOP and daily huddle plan (blank): Steps 5 and 6.
+- TEMPLATE — One-page DMAIC summary (blank): Step 7. The whole project on one page.
+- Excel workbook: lab-05-workbook.xlsx — every dataset and template above, one per tab.
+- Model answer: model-answer.md — read it AFTER you attempt the lab.
+
 **Step-by-step**
 
-1. Choose the ONE measure that tells you the improvement is still working (e.g. average wait time at 8:00am).
-2. Complete the control plan template: measure, target, how often it is checked, and who owns it.
-3. Write the reaction plan — the exact steps to take when the measure misses target.
-4. Sketch a simple visual board that would make this measure visible to the whole shift.
-5. Turn your Lab 4 standard work into a short SOP the cafe could actually pin up.
-6. Plan a five-minute daily huddle: who attends, what is reviewed and how long it lasts.
-7. Summarise the whole project on one page — problem, cause, countermeasure, result and control — and name who you hand it over to.
+1. Open data/post-improvement-monitoring.csv — four weeks of daily figures after the pilot was made permanent. Choose the ONE measure that tells you the improvement is still working.
+2. Look at data/control-plan-example.csv for the worked first row, then complete templates/control-plan-template.csv: measure, target, how often it is checked, where it is recorded and who owns it.
+3. Write the reaction plan — the exact steps to take when the measure misses target. Then find week 3 in the monitoring data and state which day your plan would have triggered on.
+4. Sketch a simple visual board that would have made the week-3 drift visible to the whole shift on day one.
+5. In templates/sop-and-huddle-template.csv, turn your Lab 4 standard work into a short SOP the cafe could actually pin up.
+6. Complete the huddle rows of the same template: who attends, what is reviewed, who runs it and how long it lasts.
+7. Using templates/one-page-summary-template.csv, summarise the whole project — problem, cause, countermeasure, result and control — and name who you hand it over to and when.
 
 **Check your work**
 
 Your control plan names a measure, a target, a frequency and an owner; your reaction plan says what to DO when it slips; and your one-page summary tells the complete DMAIC story from problem to handover.
 
-> **Note:** The full worksheet for this lab is in labs/lab-05-*.md.
+> **Note:** The full worksheet, the data, the blank templates and the model answer for this lab are in the labs/lab-05-*/ folder.
 
 ---
 

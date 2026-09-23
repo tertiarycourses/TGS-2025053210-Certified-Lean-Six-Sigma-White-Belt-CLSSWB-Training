@@ -22,6 +22,7 @@ from data_domain2 import DOMAIN2
 from data_domain3 import DOMAIN3
 from data_domain4 import DOMAIN4
 from data_domain5 import DOMAIN5
+from lab_data import LAB_DATA
 from components import (Deck, BLUE, TEAL, AMBER, RED, VIOLET, INK, GREY, LIGHT,
                         WHITE, LINE, DMAIC_COLORS)
 import concepts
@@ -206,6 +207,20 @@ def render_labs(acts, phase_label):
         tag = f"LAB {a['num']}"
         d.activity_overview(tag, a["title"], a["desc"], a["build"], a["services"],
                             kicker=f"{phase_label} · HANDS-ON", elective=opt)
+        # what the learner has been given to work from, before the steps begin
+        pack = LAB_DATA.get(a["num"])
+        if pack:
+            tiles = [(d_["title"], f"{len(d_['rows'])} rows — {d_['name']}.csv")
+                     for d_ in pack.get("datasets", [])]
+            ntp = len(pack.get("templates", []))
+            if ntp:
+                tiles.append((f"{ntp} blank templates",
+                              "Worksheets to fill in — one per step group"))
+            tiles.append((f"lab-{a['num']:02d}-workbook.xlsx",
+                          "Every dataset and template, one per tab"))
+            d.tile_grid(f"Your Data Pack — Lab {a['num']}", tiles,
+                        kicker=f"LAB {a['num']} · WHAT YOU HAVE BEEN GIVEN",
+                        cols=2, size=13)
         steps = a["steps"]
         total = len(steps)
         short = a["title"][:38]

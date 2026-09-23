@@ -1,0 +1,16 @@
+Step No,Process Step,Who Does It,Avg Time (sec),Observed Range (sec),Times Step Was Skipped
+1,Customer joins the queue,Customer,0,0,0
+2,Customer waits to reach the till,Customer,265,60-540,0
+3,Customer states the order,Customer + Cashier,22,12-40,0
+4,Cashier writes the order on the cup,Cashier,11,7-18,0
+5,Cashier re-keys the order into the till,Cashier,19,12-35,0
+6,Customer pays by card,Customer + Cashier,27,15-70,0
+7,Cup passed to the barista station,Cashier,8,4-15,0
+8,Cup waits in the barista queue,-,143,20-420,0
+9,Barista grinds and extracts the shot,Barista,34,28-45,0
+10,Barista fetches milk from the back store,Barista,96,0-180,42
+11,Barista steams the milk and pours,Barista,41,33-58,0
+12,Barista finds a lid and sleeve,Barista,14,6-30,0
+13,Barista calls the order out,Barista,6,3-12,0
+14,Customer collects the drink,Customer,9,4-25,0
+15,Drink remade after an error,Barista,78,0-140,53

@@ -20,6 +20,7 @@ from data_domain1 import DOMAIN1; from data_domain2 import DOMAIN2
 from data_domain3 import DOMAIN3
 from data_domain4 import DOMAIN4
 from data_domain5 import DOMAIN5
+from lab_data import LAB_DATA
 ACT=DOMAIN1+DOMAIN2+DOMAIN3+DOMAIN4+DOMAIN5
 import prodoc
 def _find_repo(start):
@@ -114,11 +115,26 @@ for t in C.TOPICS:
         p(f"Goal: {a['desc']}")
         h3("What you'll build")
         p(a["build"]+f"   (Tools and techniques: {a['services']}.)")
+        pack = LAB_DATA.get(a["num"])
+        if pack:
+            h3("Your data pack")
+            p("This lab ships with its own mock data for the BrewBean Cafe scenario. Everything "
+              "below is in the lab folder, as CSV files and as one Excel workbook with a tab per "
+              "sheet.")
+            bullets(
+                [f"DATA — {d['title']} ({len(d['rows'])} rows): {d['desc']}"
+                 for d in pack.get("datasets", [])] +
+                [f"TEMPLATE — {t['title']}: {t['desc']}"
+                 for t in pack.get("templates", [])] +
+                [f"Excel workbook: lab-{a['num']:02d}-workbook.xlsx — every dataset and template "
+                 f"above, one per tab.",
+                 "Model answer: model-answer.md — read it AFTER you attempt the lab."])
         h3("Step-by-step")
         steps([(instr,cmd) for instr,cmd in a["steps"]])
         h3("Check your work")
         p(a["test"])
-        note(f"The full worksheet for this lab is in labs/lab-{a['num']:02d}-*.md.")
+        note(f"The full worksheet, the data, the blank templates and the model answer for this "
+             f"lab are in the labs/lab-{a['num']:02d}-*/ folder.")
         rule()
 
 h1("Quick Reference — The DMAIC Roadmap")
@@ -263,6 +279,12 @@ prodoc.add_version_control(doc,[
   "stream mapping, Kano analysis, weighted solution-selection matrices and SPC control limits removed "
   "and replaced with recognition-level explanations; quick-reference section changed from formulas to "
   "the DMAIC roadmap; glossary aligned to the tools actually taught.",C.TRAINER),
+ ("3",C.VERSION_DATE,"Lab data pack added. Each of the five labs is now a self-contained folder "
+  "carrying its mock dataset in CSV and Excel form, blank worksheet templates, a worked model answer "
+  "and facilitator notes. The datasets are internally consistent across the five labs — the Lab 2 "
+  "observation log is the evidence base for the Lab 3 Pareto, and the Lab 4 pilot results carry into "
+  "the Lab 5 monitoring data — so the BrewBean Cafe story reconciles end to end. Lab steps rewritten "
+  "to reference the specific data and template files the learner works from.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

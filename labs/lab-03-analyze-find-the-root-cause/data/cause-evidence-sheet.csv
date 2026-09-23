@@ -1,0 +1,13 @@
+Candidate Cause,Fishbone Category,Evidence in the Data?,Where the Evidence Is,Common or Special Cause?
+Counter milk not restocked before the rush,Method,Yes,18 restock trips; step 10 avg 96 sec,Common
+Only one till open at peak,Manpower,Yes,14 single-till delays; 2 tills installed,Common
+Order written on cup then re-keyed,Method,Yes,Steps 4+5 duplicate; 9 delays,Common
+Wrong drinks made and remade,Method,Yes,7 remakes; step 15 avg 78 sec,Common
+Card machine slow to connect,Machine,Yes,5 delays; step 6 range up to 70 sec,Common
+Cups and lids stored apart,Material,Yes,4 delays; step 12 range up to 30 sec,Common
+Barista was new and still training,Manpower,No,Not recorded; opinion only,Special
+Grinder broke down on 12 June,Machine,No,"One-off, outside the observed period",Special
+Wait time is not measured at all,Measurement,Yes,No wait-time record existed before this log,Common
+Customers order complicated drinks,Material,No,No link in the data between drink type and wait,Common
+A tour group arrived on 15 June,Manpower,No,Single event; not in the observed morning,Special
+No agreed target for service time,Measurement,Yes,"5-min promise on the wall, never tracked",Common

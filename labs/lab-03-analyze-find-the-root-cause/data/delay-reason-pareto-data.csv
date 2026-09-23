@@ -1,0 +1,7 @@
+Delay Reason,Count,% of Delays,Cumulative %
+Waiting for milk restock,18,31.6,31.6
+Single till queue,14,24.6,56.1
+Order re-keyed into till,9,15.8,71.9
+Drink remade (wrong order),7,12.3,84.2
+Card payment slow,5,8.8,93.0
+Cups/lids not at hand,4,7.0,100.0

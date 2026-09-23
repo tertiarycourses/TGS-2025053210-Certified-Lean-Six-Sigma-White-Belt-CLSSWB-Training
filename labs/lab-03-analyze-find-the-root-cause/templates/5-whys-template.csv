@@ -1,0 +1,9 @@
+Level,Question,Answer
+Problem (symptom),What is going wrong?,
+Why 1,Why does that happen?,
+Why 2,Why does THAT happen?,
+Why 3,Why does THAT happen?,
+Why 4,Why does THAT happen?,
+Why 5,Why does THAT happen?,
+ROOT CAUSE,What can the team actually act on?,
+Check,"If we remove this, does the problem stop recurring?",

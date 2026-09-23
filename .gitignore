@@ -6,6 +6,7 @@ assessment/
 
 # Superseded artifact versions are kept locally for reference, not published.
 courseware/archive/
+labs/archive/
 
 # ---------------------------------------------------------------- build junk
 __pycache__/

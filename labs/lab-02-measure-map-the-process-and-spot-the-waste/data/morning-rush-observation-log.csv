@@ -1,0 +1,61 @@
+Customer ID,Time Joined Queue,Time Band,Drink Ordered,Wait Time (min),Drink Remade,Delay Reason Observed
+C001,07:30,07:30-08:00,Latte,6.0,No,Waiting for milk restock
+C002,07:32,07:30-08:00,Mocha,9.7,Yes,Drink remade (wrong order)
+C003,07:35,07:30-08:00,Espresso,6.0,No,Single till queue
+C004,07:37,07:30-08:00,Americano,8.5,No,Waiting for milk restock
+C005,07:40,07:30-08:00,Cappuccino,6.7,No,Card payment slow
+C006,07:42,07:30-08:00,Flat White,4.9,No,Order re-keyed into till
+C007,07:45,07:30-08:00,Latte,8.1,No,Single till queue
+C008,07:47,07:30-08:00,Mocha,6.2,No,Waiting for milk restock
+C009,07:50,07:30-08:00,Espresso,7.0,Yes,Drink remade (wrong order)
+C010,07:52,07:30-08:00,Americano,7.6,No,Single till queue
+C011,07:55,07:30-08:00,Cappuccino,6.0,No,Waiting for milk restock
+C012,07:57,07:30-08:00,Flat White,4.0,No,Cups/lids not at hand
+C013,08:00,08:00-08:30,Latte,13.2,No,Waiting for milk restock
+C014,08:01,08:00-08:30,Mocha,10.8,No,Single till queue
+C015,08:03,08:00-08:30,Espresso,15.0,No,Waiting for milk restock
+C016,08:04,08:00-08:30,Americano,12.6,No,Single till queue
+C017,08:06,08:00-08:30,Cappuccino,10.2,No,Single till queue
+C018,08:07,08:00-08:30,Flat White,14.4,No,Waiting for milk restock
+C019,08:09,08:00-08:30,Latte,12.0,No,Waiting for milk restock
+C020,08:10,08:00-08:30,Mocha,9.6,No,Waiting for milk restock
+C021,08:12,08:00-08:30,Espresso,13.8,No,Single till queue
+C022,08:13,08:00-08:30,Americano,11.4,No,Waiting for milk restock
+C023,08:15,08:00-08:30,Cappuccino,11.5,Yes,Drink remade (wrong order)
+C024,08:16,08:00-08:30,Flat White,13.2,No,Single till queue
+C025,08:18,08:00-08:30,Latte,10.8,No,Waiting for milk restock
+C026,08:19,08:00-08:30,Mocha,15.0,No,Cups/lids not at hand
+C027,08:21,08:00-08:30,Espresso,12.6,No,Order re-keyed into till
+C028,08:22,08:00-08:30,Americano,10.2,No,Single till queue
+C029,08:24,08:00-08:30,Cappuccino,14.4,No,Waiting for milk restock
+C030,08:25,08:00-08:30,Flat White,14.5,Yes,Drink remade (wrong order)
+C031,08:27,08:00-08:30,Latte,9.6,No,Single till queue
+C032,08:28,08:00-08:30,Mocha,13.8,No,Waiting for milk restock
+C033,08:30,08:30-09:00,Espresso,8.6,No,Cups/lids not at hand
+C034,08:31,08:30-09:00,Americano,6.0,No,Order re-keyed into till
+C035,08:33,08:30-09:00,Cappuccino,10.6,No,Single till queue
+C036,08:35,08:30-09:00,Flat White,8.0,No,Waiting for milk restock
+C037,08:36,08:30-09:00,Latte,12.5,No,Card payment slow
+C038,08:38,08:30-09:00,Mocha,9.9,No,Single till queue
+C039,08:40,08:30-09:00,Espresso,7.3,No,Waiting for milk restock
+C040,08:41,08:30-09:00,Americano,4.5,No,No delay observed
+C041,08:43,08:30-09:00,Cappuccino,9.2,No,Order re-keyed into till
+C042,08:45,08:30-09:00,Flat White,6.7,No,Single till queue
+C043,08:46,08:30-09:00,Latte,11.2,No,Waiting for milk restock
+C044,08:48,08:30-09:00,Mocha,8.6,No,Card payment slow
+C045,08:50,08:30-09:00,Espresso,6.0,No,Order re-keyed into till
+C046,08:51,08:30-09:00,Americano,10.6,No,Waiting for milk restock
+C047,08:53,08:30-09:00,Cappuccino,4.5,No,No delay observed
+C048,08:55,08:30-09:00,Flat White,15.0,Yes,Drink remade (wrong order)
+C049,08:56,08:30-09:00,Latte,9.9,No,Single till queue
+C050,08:58,08:30-09:00,Mocha,7.3,No,Waiting for milk restock
+C051,09:00,09:00-09:15,Espresso,5.2,No,Card payment slow
+C052,09:01,09:00-09:15,Americano,4.0,No,Order re-keyed into till
+C053,09:03,09:00-09:15,Cappuccino,2.8,No,Order re-keyed into till
+C054,09:04,09:00-09:15,Flat White,4.5,No,No delay observed
+C055,09:06,09:00-09:15,Latte,6.2,Yes,Drink remade (wrong order)
+C056,09:07,09:00-09:15,Mocha,5.0,Yes,Drink remade (wrong order)
+C057,09:09,09:00-09:15,Espresso,4.6,No,Cups/lids not at hand
+C058,09:10,09:00-09:15,Americano,3.4,No,Card payment slow
+C059,09:12,09:00-09:15,Cappuccino,5.5,No,Order re-keyed into till
+C060,09:13,09:00-09:15,Flat White,4.3,No,Order re-keyed into till

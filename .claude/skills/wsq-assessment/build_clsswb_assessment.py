@@ -36,7 +36,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH as AL, WD_BREAK
 # ----------------------------------------------------------------- config
 TITLE = "Certified Lean Six Sigma White Belt (CLSSWB) Training"
 COURSE_CODE = "TGS-2025053210"
-VERSION = "v2"
+VERSION = "v3"
 WA_MINUTES = "30 minutes"
 CS_MINUTES = "30 minutes"
 
@@ -190,11 +190,13 @@ SCENARIO = (
     "morning rush show:"
 )
 SCENARIO_POINTS = [
-    "Customers queue for up to 15 minutes; the cafe's own service promise is 5 minutes.",
+    "A sample of 60 customers was timed across one morning rush: the average wait was "
+    f"8.9 minutes and the longest was 15.0 minutes, against the cafe's own "
+    "5-minute service promise.",
     "Only one till is open at peak hour, even though two are installed.",
     "Milk runs out at the counter during the rush and has to be fetched from the back store.",
     "Orders are written on the cup and then re-keyed into the till.",
-    "Some drinks are made wrong and have to be remade, delaying everyone behind in the queue.",
+    "7 drinks were made wrong and had to be remade, delaying everyone behind in the queue.",
     "No one currently records how long customers actually wait.",
 ]
 SCENARIO_TAIL = (
@@ -206,6 +208,7 @@ CASE = [
     dict(
         num=1,
         codes="A1, A2",
+        labs="Lab 1",
         question=(
             "Based on the information provided and using the DMAIC framework, outline THREE things the "
             "improvement team should establish in the DEFINE phase to scope this problem properly. "
@@ -215,7 +218,8 @@ CASE = [
         lines=14,
         answer=[
             "Any THREE of the following, each with its purpose (Lab 1 — Define: Customer Requirements "
-            "and the Problem Statement; Slides: DMAIC · Define):",
+            "and the Problem Statement, worked against voc-raw-customer-feedback.csv; "
+            "Slides: DMAIC · Define):",
             "• VOICE OF THE CUSTOMER (VOC) — capture what customers actually say, in their own words "
             "(e.g. 'I'm late for work because the queue is too slow'). Purpose: ground the project in "
             "real customer need rather than the team's assumptions.",
@@ -245,6 +249,7 @@ CASE = [
     dict(
         num=2,
         codes="A3",
+        labs="Lab 3",
         question=(
             "The team needs to find out WHY the queue is slow rather than guessing. Recommend a "
             "root cause analysis approach the team should use, explain why it is suitable, and apply "
@@ -253,7 +258,8 @@ CASE = [
         lines=14,
         answer=[
             "Recommend 5 WHYS and/or a FISHBONE (Ishikawa) DIAGRAM, and explain the choice "
-            "(Lab 3 — Analyze: Find the Root Cause; Slides: DMAIC · Analyze):",
+            "(Lab 3 — Analyze: Find the Root Cause, worked against delay-reason-pareto-data.csv "
+            "and cause-evidence-sheet.csv; Slides: DMAIC · Analyze):",
             "• Why suitable: both are simple, quick, team-based tools that need no statistics, which "
             "suits a White Belt team acting on observations. They move the team from the SYMPTOM "
             "('the queue is slow') to a CAUSE it can actually act on. Fixing a symptom makes the "
@@ -285,6 +291,7 @@ CASE = [
     dict(
         num=3,
         codes="A4",
+        labs="Lab 2",
         question=(
             "List TWO measures (KPIs) BrewBean Cafe should collect to understand how the process is "
             "really performing, explain why each is important, and state for each whether it is "
@@ -293,7 +300,8 @@ CASE = [
         lines=14,
         answer=[
             "Any TWO sensible measures, each with purpose, data type and collection method "
-            "(Lab 2 — Measure: Map the Process and Spot the Waste; Slides: DMAIC · Measure):",
+            "(Lab 2 — Measure, worked against morning-rush-observation-log.csv and "
+            "process-step-timings.csv; Slides: DMAIC · Measure):",
             "• CUSTOMER WAIT TIME (minutes, from joining the queue to receiving the drink). "
             "Why: it is the measure the customer actually experiences and it maps directly to the "
             "5-minute CTQ, so it tells the team whether the promise is being met. "
@@ -319,6 +327,7 @@ CASE = [
     dict(
         num=4,
         codes="A5",
+        labs="Lab 5",
         question=(
             "Suppose the team makes a change and the average wait time improves, but after one month "
             "it has drifted back towards 15 minutes. Recommend what the team should do to make the "
@@ -327,7 +336,8 @@ CASE = [
         lines=14,
         answer=[
             "The drift back is exactly what the CONTROL phase exists to prevent — without it, "
-            "processes quietly return to the old way (Lab 5 — Control: Hold the Gain and Hand Over; "
+            "processes quietly return to the old way (Lab 5 — Control, worked against "
+            "post-improvement-monitoring.csv, whose week 3 shows precisely this drift; "
             "Slides: DMAIC · Control).",
             "",
             "A CONTROL PLAN for BrewBean Cafe should name:",
@@ -525,7 +535,9 @@ def build_cs(is_key):
     line(d, SCENARIO_TAIL, italic=True, size=10, color=GREY, after=12)
 
     for q in CASE:
-        line(d, f"Question {q['num']} ({q['codes']})", bold=True, size=12, color=BRAND, after=4)
+        cite = f"  [{q['labs']}]" if q.get("labs") else ""
+        line(d, f"Question {q['num']} ({q['codes']}){cite}", bold=True, size=12, color=BRAND,
+             after=4)
         line(d, q["question"], after=8)
         if is_key:
             line(d, "Model answer — award for any reasonable equivalent wording:",
