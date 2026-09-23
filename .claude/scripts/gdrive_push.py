@@ -9,7 +9,7 @@ Routing (folders matched case-insensitively under the given root; created if mis
   Learner Guide         : LG .docx + .pdf, plus the slides .pdf
   Lesson Plan           : LP .docx + .pdf
   Assessment            : all assessment .docx (question papers + answer keys)
-  Activities            : the whole labs/ tree (rclone sync with --backup-dir)
+  Activities            : the whole activities/ tree (rclone sync with --backup-dir)
 
 Change detection: files whose MD5 already matches the Drive copy are SKIPPED (no
 re-upload, no archiving). Only changed/new files are pushed.
@@ -230,11 +230,14 @@ def main():
         print(f"  {real_name}{' (will be created)' if created else ''}:")
         push_folder(root, folder_path, files, dry)
 
-    labs_dir = os.path.join(repo, "labs")
-    if os.path.isdir(labs_dir):
+    # The house layout is activities/ (one folder per activity); labs/ is the
+    # legacy name and is still accepted so older course repos keep working.
+    labs_dir = next((p for p in (os.path.join(repo, "activities"),
+                                 os.path.join(repo, "labs")) if os.path.isdir(p)), None)
+    if labs_dir:
         push_labs(root, labs_dir, dry)
     else:
-        print("  Activities: no labs/ folder found — skipped")
+        print("  Activities: no activities/ or labs/ folder found — skipped")
     print("Done." if not dry else "Dry run complete — nothing was modified.")
 
 

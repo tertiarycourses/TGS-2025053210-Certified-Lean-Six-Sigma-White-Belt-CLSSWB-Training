@@ -17,7 +17,7 @@ Routing (folders matched case-insensitively under the given root; created if mis
   Learner Guide         : LG .docx + .pdf, plus the slides .pdf
   Lesson Plan           : LP .docx + .pdf
   Assessment            : all assessment .docx (question papers + answer keys)
-  Activities            : the whole labs/ tree (rclone sync with --backup-dir)
+  Activities            : the whole activities/ tree (rclone sync with --backup-dir)
 
 Change detection: files whose MD5 already matches the Drive copy are SKIPPED (no
 re-upload, no archiving). Only changed/new files are pushed.
@@ -98,8 +98,16 @@ def course_code_from_courseware(repo):
 
 
 def get_json(url):
+    """GET a JSON endpoint, authenticating with the LMS-TMS API key when one is
+    in the environment. The API expects the key in the X-API-Key header; without
+    it the endpoints answer 401 Not authenticated."""
+    headers = {"User-Agent": "gdrive-push"}
+    key = os.environ.get("LMS_TMS_API_KEY")
+    if key:
+        headers["X-API-Key"] = key
     try:
-        with urllib.request.urlopen(url, timeout=60) as r:
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=60) as r:
             return json.loads(r.read())
     except urllib.error.HTTPError as e:
         raise SystemExit(f"GET {url} -> {e.code}: {e.read()[:300].decode(errors='replace')}")
@@ -411,11 +419,14 @@ def main():
         print(f"  {real_name}{' (will be created)' if created else ''}:")
         push_folder(root, folder_path, files, dry)
 
-    labs_dir = os.path.join(repo, "labs")
-    if os.path.isdir(labs_dir):
+    # The house layout is activities/ (one folder per activity); labs/ is the
+    # legacy name and is still accepted so older course repos keep working.
+    labs_dir = next((p for p in (os.path.join(repo, "activities"),
+                                 os.path.join(repo, "labs")) if os.path.isdir(p)), None)
+    if labs_dir:
         push_labs(root, labs_dir, dry)
     else:
-        print("  Activities: no labs/ folder found — skipped")
+        print("  Activities: no activities/ or labs/ folder found — skipped")
     if dry:
         print("Dry run complete — nothing was modified.")
         return
